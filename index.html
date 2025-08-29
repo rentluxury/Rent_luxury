@@ -166,6 +166,11 @@
       🚗 ارسال درخواست از طریق واتساپ
     </button>
   </form>
+
+  <!-- پیام تشکر -->
+  <p id="thanksMsg" style="text-align:center; color:green; font-weight:bold; margin-top:20px; display:none;">
+    ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند.
+  </p>
 </section>
 
 <script>
@@ -184,6 +189,9 @@ function sendRequest() {
 
   let url = "https://wa.me/989124253122?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
+
+  // نمایش پیام تشکر
+  document.getElementById("thanksMsg").style.display = "block";
 }
 </script>
 
