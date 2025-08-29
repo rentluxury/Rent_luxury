@@ -134,20 +134,58 @@
 </html>
     <div class="form">
         <h2>رزرو خودرو</h2>
-        <input type="text" placeholder="نام کامل">
-        <input type="tel" placeholder="شماره تماس">
-        <select>
-            <option>انتخاب خودرو</option>
-            <option>بنز</option>
-            <option>بی‌ام‌و</option>
-            <option>سوناتا</option>
-            <option>لندکروز</option>
-            <option>تالیسمان</option>
-        </select>
-        <input type="date" placeholder="تاریخ شروع">
-        <input type="date" placeholder="تاریخ پایان">
-        <button>ارسال درخواست</button>
-    </div>
+        <section style="max-width:500px; margin:50px auto; padding:20px; border:1px solid #ddd; border-radius:10px; background:#f9f9f9; font-family:tahoma;">
+  <h2 style="text-align:center; color:#333;">🔑 فرم رزرو خودرو</h2>
+  <p style="text-align:center; color:#666;">لطفا اطلاعات خود را وارد کنید تا کارشناسان ما با شما تماس بگیرند.</p>
+  <hr><br>
+
+  <form onsubmit="sendRequest(); return false;">
+    <label>نام و نام خانوادگی:</label><br>
+    <input type="text" id="name" required style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:5px;"><br>
+
+    <label>شماره تماس:</label><br>
+    <input type="text" id="phone" required style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:5px;"><br>
+
+    <label>انتخاب خودرو:</label><br>
+    <select id="car" required style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:5px;">
+      <option value="بنز">بنز</option>
+      <option value="بی‌ام‌و">بی‌ام‌و</option>
+      <option value="سوناتا">سوناتا</option>
+      <option value="لندکروز">لندکروز</option>
+      <option value="تالیسمان">تالیسمان</option>
+    </select><br>
+
+    <label>تاریخ شروع اجاره:</label><br>
+    <input type="date" id="start" required style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:5px;"><br>
+
+    <label>تاریخ پایان اجاره:</label><br>
+    <input type="date" id="end" required style="width:100%; padding:8px; margin:5px 0; border:1px solid #ccc; border-radius:5px;"><br><br>
+
+    <button type="submit" 
+            style="width:100%; padding:12px; background:#25D366; color:white; font-size:16px; border:none; border-radius:5px; cursor:pointer;">
+      🚗 ارسال درخواست از طریق واتساپ
+    </button>
+  </form>
+</section>
+
+<script>
+function sendRequest() {
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let car = document.getElementById("car").value;
+  let start = document.getElementById("start").value;
+  let end = document.getElementById("end").value;
+
+  let message = "سلام، من " + name + 
+                " هستم. شماره تماس: " + phone + 
+                ". می‌خواهم خودرو " + car + 
+                " را از تاریخ " + start + 
+                " تا تاریخ " + end + " رزرو کنم.";
+
+  let url = "https://wa.me/989124253122?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+</script>
 
     <div class="comments">
         <h2>نظرات مشتریان</h2>
