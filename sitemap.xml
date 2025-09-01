@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- صفحه اصلی -->
+  <url>
+    <loc>https://rentluxury.ir/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحه بنز -->
+  <url>
+    <loc>https://rentluxury.ir/benz.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحه بی‌ام‌و -->
+  <url>
+    <loc>https://rentluxury.ir/bmw525.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحه لندکروز -->
+  <url>
+    <loc>https://rentluxury.ir/landcruiser.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحه C-HR -->
+  <url>
+    <loc>https://rentluxury.ir/Chr.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحه KMC -->
+  <url>
+    <loc>https://rentluxury.ir/KMC.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحه لکسوس -->
+  <url>
+    <loc>https://rentluxury.ir/Lexuse.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
