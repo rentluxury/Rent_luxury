@@ -258,35 +258,38 @@
   <p style="margin-top:15px; font-size:14px;">© 2025 Rent Luxury - تمامی حقوق محفوظ است.</p>
 </footer>
 
-<!-- دکمه واتساپ شناور -->
-<a href="https://wa.me/989124253122" target="_blank" id="whatsapp-bubble">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساپ" style="width:40px; height:40px;">
+<a href="https://wa.me/989124253122" target="_blank" class="whatsapp-float">
+  💬 واتساپ
 </a>
 
 <style>
-#whatsapp-bubble {
+.whatsapp-float {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  right: 40px; /* فاصله بیشتر از لبه */
+  bottom: 40px;
+  background: #25d366;
+  color: #fff;
+  font-size: 28px;   /* بزرگ‌تر از قبل */
+  font-weight: bold;
+  padding: 22px 32px;  /* حباب درشت‌تر */
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
   z-index: 1000;
-  animation: bounce 1.5s infinite;
+  animation: floatBubble 6s ease-in-out infinite; /* انیمیشن کامل */
 }
 
-#whatsapp-bubble:hover {
-  background: #128C7E;
+@keyframes floatBubble {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-50px, -80px); }  /* چپ + بالا */
+  50%  { transform: translate(0, -40px); }      /* کمی بالا */
+  75%  { transform: translate(50px, 60px); }    /* راست + پایین */
+  100% { transform: translate(0, 0); }
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+.whatsapp-float:hover {
+  background: #128c7e;
+  transform: scale(1.1); /* وقتی روش میره بزرگ‌تر شه */
 }
 </style>
 
