@@ -8,6 +8,9 @@
   <meta name="author" content="Rent Luxury">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- کتابخانه تاریخ شمسی -->
+  <script src="https://cdn.jsdelivr.net/npm/jalaali-js@1.1.0/dist/jalaali.min.js"></script>
+
   <style>
     body{font-family:Tahoma,sans-serif;background:#f4f4f4;margin:0;padding:0;text-align:center}
     header{background:#000;color:#fff;padding:20px}
@@ -26,25 +29,25 @@
     <h1>KMC کراس‌اوور لوکس</h1>
   </header>
 
-  <!-- معرفی خودرو -->
+  <!-- معرفی خودرو برای سئو -->
   <section>
     <img src="KMC.jpeg" alt="اجاره خودرو KMC در تهران - رنت لاکچری" class="car-img">
 
     <div class="intro">
       <h2>اجاره KMC در تهران</h2>
       <p>
-        KMC یک <strong>کراس‌اوور مدرن و جادار</strong> است که طراحی لوکس و امکانات رفاهی پیشرفته را ارائه می‌دهد. 
-        این خودرو برای <strong>سفرهای خانوادگی، استفاده روزمره و سفرهای بین‌شهری</strong> بسیار مناسب است. 
-        با رنت لاکچری می‌توانید KMC را با بهترین شرایط اجاره کنید و از کیفیت رانندگی لذت ببرید.
+        خودرو KMC یک <strong>کراس‌اوور مدرن و خانوادگی</strong> است که با طراحی زیبا و امکانات رفاهی کامل، تجربه‌ای متفاوت از رانندگی را برای شما فراهم می‌کند.
+        این خودرو مناسب برای <strong>سفرهای شهری و بین‌شهری</strong> است و به دلیل فضای داخلی جادار و مصرف بهینه، گزینه‌ای ایده‌آل برای خانواده‌ها به شمار می‌رود.
+        با رنت لاکچری می‌توانید KMC را به‌صورت <strong>روزانه، هفتگی یا ماهانه</strong> اجاره کنید و از خدمات ویژه ما بهره‌مند شوید.
       </p>
     </div>
 
     <ul class="specs">
-      <li>🔹 طراحی جذاب و لوکس</li>
-      <li>🔹 کابین جادار و خانوادگی</li>
-      <li>🔹 امکانات ایمنی و رفاهی مدرن</li>
-      <li>🔹 مناسب برای سفرهای شهری و جاده‌ای</li>
-      <li>🔹 امکان اجاره روزانه، هفتگی و ماهانه</li>
+      <li>🔹 طراحی جذاب و مدرن</li>
+      <li>🔹 کابین راحت و جادار</li>
+      <li>🔹 امکانات ایمنی و رفاهی کامل</li>
+      <li>🔹 مناسب برای سفرهای خانوادگی و کاری</li>
+      <li>🔹 اجاره آسان و سریع از طریق واتساپ</li>
     </ul>
   </section>
 
@@ -79,8 +82,9 @@
       </button>
     </form>
 
-    <p id="thanksMsg" style="text-align:center; color:#d4af37; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
-      ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند.
+    <!-- پیام تشکر -->
+    <p id="thanksMsg" style="text-align:center; color:#00ff90; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
+      ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند. 🙏
     </p>
   </section>
 
@@ -88,12 +92,20 @@
   <a href="index.html" class="back-btn">⬅ بازگشت به صفحه اصلی</a>
 
   <script>
+    function toJalali(dateStr) {
+      let parts = dateStr.split("-");
+      if (parts.length !== 3) return dateStr;
+      let g = { gy: parseInt(parts[0]), gm: parseInt(parts[1]), gd: parseInt(parts[2]) };
+      let j = jalaali.toJalaali(g.gy, g.gm, g.gd);
+      return j.jy + "/" + j.jm + "/" + j.jd;
+    }
+
     function sendRequest() {
       let name  = document.getElementById("name").value;
       let phone = document.getElementById("phone").value;
       let car   = document.getElementById("car").value;
-      let start = document.getElementById("start").value;
-      let end   = document.getElementById("end").value;
+      let start = toJalali(document.getElementById("start").value);
+      let end   = toJalali(document.getElementById("end").value);
 
       let message = "سلام، من " + name +
                     " هستم. شماره تماس: " + phone +
@@ -108,4 +120,4 @@
   </script>
 
 </body>
-</html> 
+</html>
