@@ -8,9 +8,6 @@
   <meta name="author" content="Rent Luxury">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- کتابخانه تاریخ شمسی -->
-  <script src="https://cdn.jsdelivr.net/npm/jalaali-js@1.1.0/dist/jalaali.min.js"></script>
-
   <style>
     body{font-family:Tahoma,sans-serif;background:#f4f4f4;margin:0;padding:0;text-align:center}
     header{background:#000;color:#fff;padding:20px}
@@ -20,8 +17,13 @@
     .specs{max-width:700px;margin:10px auto;text-align:right;line-height:2}
     .back-btn{display:inline-block;margin:30px auto;padding:12px 25px;background:#d4af37;color:#000;font-weight:bold;border-radius:6px;text-decoration:none;transition:.3s}
     .back-btn:hover{background:#000;color:#d4af37}
-    #thanksMsg{display:none;text-align:center;color:#d4af37;font-weight:bold;margin-top:25px;font-size:18px;}
   </style>
+
+  <!-- کتابخانه تقویم شمسی -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-date@1.0.6/dist/persian-date.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.js"></script>
 </head>
 <body>
 
@@ -70,11 +72,11 @@
       <input type="hidden" id="car" value="KMC">
 
       <label>تاریخ شروع اجاره:</label><br>
-      <input type="date" id="start" required
+      <input type="text" id="start" class="datepicker"
              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
 
       <label>تاریخ پایان اجاره:</label><br>
-      <input type="date" id="end" required
+      <input type="text" id="end" class="datepicker"
              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br><br>
 
       <button type="submit"
@@ -83,29 +85,29 @@
       </button>
     </form>
 
-    <!-- پیام تشکر -->
-    <p id="thanksMsg">✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند.</p>
+    <p id="thanksMsg" style="text-align:center; color:#d4af37; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
+      ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند.
+    </p>
   </section>
 
   <!-- دکمه بازگشت -->
   <a href="index.html" class="back-btn">⬅ بازگشت به صفحه اصلی</a>
 
   <script>
-    // تبدیل تاریخ میلادی به شمسی
-    function toJalali(dateStr) {
-      let parts = dateStr.split("-");
-      if (parts.length !== 3) return dateStr;
-      let g = { gy: parseInt(parts[0]), gm: parseInt(parts[1]), gd: parseInt(parts[2]) };
-      let j = jalaali.toJalaali(g.gy, g.gm, g.gd);
-      return j.jy + "/" + j.jm + "/" + j.jd;
-    }
+    // فعال‌سازی تقویم شمسی
+    $(document).ready(function(){
+      $(".datepicker").persianDatepicker({
+        format: 'YYYY/MM/DD'
+      });
+    });
 
+    // ارسال به واتساپ
     function sendRequest() {
       let name  = document.getElementById("name").value;
       let phone = document.getElementById("phone").value;
       let car   = document.getElementById("car").value;
-      let start = toJalali(document.getElementById("start").value);
-      let end   = toJalali(document.getElementById("end").value);
+      let start = document.getElementById("start").value;
+      let end   = document.getElementById("end").value;
 
       let message = "سلام، من " + name +
                     " هستم. شماره تماس: " + phone +
@@ -115,8 +117,6 @@
 
       let url = "https://wa.me/989124253122?text=" + encodeURIComponent(message);
       window.open(url, "_blank");
-
-      // نمایش پیام تشکر
       document.getElementById("thanksMsg").style.display = "block";
     }
   </script>
