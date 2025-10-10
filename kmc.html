@@ -17,7 +17,7 @@
     .specs{max-width:700px;margin:10px auto;text-align:right;line-height:2}
     .back-btn{display:inline-block;margin:30px auto;padding:12px 25px;background:#d4af37;color:#000;font-weight:bold;border-radius:6px;text-decoration:none;transition:.3s}
     .back-btn:hover{background:#000;color:#d4af37}
-    /* تنظیمات فرم (مطابق قالب) */
+    /* تنظیمات فرم مطابق قالب */
     .reserve-input { width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px; box-sizing:border-box; }
   </style>
 
@@ -26,6 +26,7 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
 </head>
 <body>
 
@@ -41,8 +42,8 @@
     <div class="intro">
       <h2>اجاره KMC در تهران</h2>
       <p>
-        KMC یک <strong>کراس‌اوور مدرن و جادار</strong> است که طراحی لوکس و امکانات رفاهی پیشرفته را ارائه می‌دهد.
-        این خودرو مناسب برای <strong>سفرهای خانوادگی، استفاده روزمره و سفرهای بین‌شهری</strong> است.
+        KMC یک <strong>کراس‌اوور مدرن و جادار</strong> است که طراحی لوکس و امکانات رفاهی پیشرفته را ارائه می‌دهد.  
+        این خودرو انتخابی مناسب برای <strong>سفرهای خانوادگی، استفاده روزمره و سفرهای بین‌شهری</strong> است.  
         با رنت لاکچری می‌توانید KMC را با شرایط آسان و پشتیبانی حرفه‌ای رزرو کنید.
       </p>
     </div>
@@ -72,10 +73,10 @@
       <input type="hidden" id="car" value="KMC">
 
       <label>تاریخ شروع اجاره:</label><br>
-      <input type="text" id="start" class="pdate reserve-input" autocomplete="off" required placeholder="۱۴۰۴/۰۷/۱۴"><br>
+      <input type="text" id="start" class="pdate reserve-input" autocomplete="off" required><br>
 
       <label>تاریخ پایان اجاره:</label><br>
-      <input type="text" id="end" class="pdate reserve-input" autocomplete="off" required placeholder="۱۴۰۴/۰۷/۱۸"><br><br>
+      <input type="text" id="end" class="pdate reserve-input" autocomplete="off" required><br><br>
 
       <button type="submit"
               style="width:100%; padding:16px; background:#d4af37; color:#000; font-size:20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
@@ -91,7 +92,7 @@
   <!-- دکمه بازگشت -->
   <a href="index.html" class="back-btn">⬅ بازگشت به صفحه اصلی</a>
 
-  <!-- فعال‌سازی تقویم شمسی و ارسال -->
+  <!-- فعال‌سازی تقویم شمسی -->
   <script>
     $(document).ready(function() {
       if (typeof $.fn.persianDatepicker === 'function') {
@@ -106,34 +107,27 @@
       }
     });
 
-    function normalizePhone(raw){
-      if(!raw) return "";
-      let digits = raw.replace(/\D/g,'');
-      if(digits.length === 11 && digits.startsWith('0')) digits = '98' + digits.slice(1);
-      if(digits.length === 10 && digits.startsWith('9')) digits = '98' + digits;
-      return digits;
-    }
-
     function sendRequest() {
-      let name  = document.getElementById("name").value.trim();
-      let phoneRaw = document.getElementById("phone").value.trim();
-      let phoneNormalized = normalizePhone(phoneRaw) || '989124253122';
+      let name  = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
       let car   = document.getElementById("car").value;
-      let start = document.getElementById("start").value; // شمسی: 1404/07/14
+      let start = document.getElementById("start").value; // مثال: 1404/07/14 (شمسی)
       let end   = document.getElementById("end").value;
 
-      if(!name || !phoneRaw || !start || !end){
+      if(!name || !phone || !start || !end){
         alert('لطفا همهٔ فیلدهای ضروری را پر کنید.');
         return;
       }
 
+      // پیام همانطور که در قالب مرسدس بود
       let message = "سلام، من " + name +
-                    " هستم. شماره تماس: " + phoneRaw +
+                    " هستم. شماره تماس: " + phone +
                     ". می‌خواهم خودرو " + car +
                     " را از تاریخ " + start +
                     " تا تاریخ " + end + " رزرو کنم.";
 
-      let url = "https://wa.me/" + phoneNormalized + "?text=" + encodeURIComponent(message);
+      // شماره واتساپ شرکت — ثابت و مثل قالب مرسدس
+      let url = "https://wa.me/989124253122?text=" + encodeURIComponent(message);
       window.open(url, "_blank");
 
       // نمایش پیام تشکر
