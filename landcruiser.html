@@ -8,6 +8,11 @@
   <meta name="author" content="Rent Luxury">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Persian Datepicker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/md.bootstrappersiandatetimepicker/dist/css/mds.bs.datetimepicker.style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/md.bootstrappersiandatetimepicker/dist/js/mds.bs.datetimepicker.js"></script>
+
   <style>
     body{font-family:Tahoma,sans-serif;background:#f4f4f4;margin:0;padding:0;text-align:center}
     header{background:#000;color:#fff;padding:20px}
@@ -18,12 +23,6 @@
     .back-btn{display:inline-block;margin:30px auto;padding:12px 25px;background:#d4af37;color:#000;font-weight:bold;border-radius:6px;text-decoration:none;transition:.3s}
     .back-btn:hover{background:#000;color:#d4af37}
   </style>
-
-  <!-- لود jQuery و تقویم شمسی -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/persian-date@1.0.6/dist/persian-date.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
 </head>
 <body>
 
@@ -73,11 +72,11 @@
       <input type="hidden" id="car" value="تویوتا لندکروز">
 
       <label>تاریخ شروع اجاره:</label><br>
-      <input type="text" id="start" class="persian-date" required
+      <input type="text" id="start" class="datepicker" required
              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
 
       <label>تاریخ پایان اجاره:</label><br>
-      <input type="text" id="end" class="persian-date" required
+      <input type="text" id="end" class="datepicker" required
              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br><br>
 
       <button type="submit"
@@ -94,17 +93,20 @@
   <!-- دکمه بازگشت -->
   <a href="index.html" class="back-btn">⬅ بازگشت به صفحه اصلی</a>
 
-  <!-- اسکریپت -->
   <script>
-    // فعال‌سازی تقویم شمسی
-    $(".persian-date").persianDatepicker({
-      format: 'YYYY/MM/DD',
-      initialValue: false,
-      autoClose: true,
-      calendarType: 'persian'
+    $(document).ready(function(){
+      $("#start").MdPersianDateTimePicker({
+        targetTextSelector: "#start",
+        dateFormat: "yyyy/MM/dd",
+        isGregorian: false
+      });
+      $("#end").MdPersianDateTimePicker({
+        targetTextSelector: "#end",
+        dateFormat: "yyyy/MM/dd",
+        isGregorian: false
+      });
     });
 
-    // ارسال درخواست واتساپ
     function sendRequest() {
       let name  = document.getElementById("name").value;
       let phone = document.getElementById("phone").value;
