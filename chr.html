@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>اجاره تویوتا C-HR در تهران | رنت لاکچری</title>
-  <meta name="description" content="اجاره تویوتا C-HR در تهران با رنت لاکچری. کراس‌اوور اسپرت و اقتصادی با طراحی مدرن و امکانات رفاهی. رزرو آسان از طریق واتساپ.">
-  <meta name="keywords" content="اجاره تویوتا C-HR, اجاره chr, اجاره تویوتا در تهران, اجاره ماشین کراس‌اوور, اجاره خودرو لاکچری">
+  <meta name="description" content="اجاره تویوتا C-HR در تهران با رنت لاکچری. کراس‌اوور اسپرت، مدرن و اقتصادی برای سفرهای شهری و خارج‌شهری. رزرو آسان از طریق واتساپ.">
+  <meta name="keywords" content="اجاره C-HR, اجاره تویوتا, اجاره chr, اجاره ماشین کراس‌اوور, اجاره خودرو در تهران, رنت لاکچری">
   <meta name="author" content="Rent Luxury">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- استایل صفحه -->
   <style>
     body{font-family:Tahoma,sans-serif;background:#f4f4f4;margin:0;padding:0;text-align:center}
     header{background:#000;color:#fff;padding:20px}
@@ -18,13 +17,14 @@
     .specs{max-width:700px;margin:10px auto;text-align:right;line-height:2}
     .back-btn{display:inline-block;margin:30px auto;padding:12px 25px;background:#d4af37;color:#000;font-weight:bold;border-radius:6px;text-decoration:none;transition:.3s}
     .back-btn:hover{background:#000;color:#d4af37}
-    input, button{font-family:tahoma}
+    .reserve-input { width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px; box-sizing:border-box; }
   </style>
 
-  <!-- استایل تقویم شمسی -->
-  <link rel="stylesheet" href="mds.bs.datetimepicker.css">
-  <script src="jquery.min.js"></script>
-  <script src="mds.bs.datetimepicker.js"></script>
+  <!-- تقویم شمسی -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
 
 </head>
 <body>
@@ -41,18 +41,18 @@
     <div class="intro">
       <h2>اجاره تویوتا C-HR در تهران</h2>
       <p>
-        تویوتا C-HR یک <strong>کراس‌اوور اسپرت و مدرن</strong> است که طراحی جذاب،
-        امکانات رفاهی مناسب و مصرف سوخت اقتصادی را یکجا ارائه می‌دهد.
-        این خودرو برای <strong>سفرهای شهری و خارج‌شهری</strong> انتخابی عالی است.
-        با رنت لاکچری می‌توانید C-HR را به‌راحتی و با شرایط ویژه اجاره کنید.
+        تویوتا C-HR یک <strong>کراس‌اوور اسپرت و مدرن</strong> است که طراحی جذاب، 
+        امکانات رفاهی مناسب و مصرف سوخت اقتصادی را یکجا ارائه می‌دهد. 
+        این خودرو برای <strong>سفرهای شهری، استفاده روزمره و سفرهای کوتاه خارج‌شهری</strong> 
+        گزینه‌ای عالی است. با رنت لاکچری می‌توانید C-HR را به‌راحتی و با شرایط ویژه اجاره کنید.
       </p>
     </div>
 
     <ul class="specs">
       <li>🔹 طراحی اسپرت و مدرن</li>
       <li>🔹 مصرف سوخت بهینه</li>
-      <li>🔹 کابین راحت با امکانات رفاهی</li>
-      <li>🔹 مناسب برای سفرهای شهری و برون‌شهری</li>
+      <li>🔹 کابین راحت با امکانات رفاهی مناسب</li>
+      <li>🔹 مناسب برای سفرهای شهری و خارج‌شهری</li>
       <li>🔹 امکان اجاره روزانه، هفتگی و ماهانه</li>
     </ul>
   </section>
@@ -60,27 +60,23 @@
   <!-- فرم رزرو -->
   <section style="max-width:600px; margin:40px auto; padding:35px; border:2px solid #d4af37; border-radius:14px; background:#000; color:#fff; font-size:18px;">
     <h2 style="text-align:center; color:#d4af37; font-size:26px;">🔑 فرم رزرو خودرو</h2>
-    <p style="text-align:center; color:#ccc; font-size:16px;">اطلاعات خود را وارد کنید تا کارشناسان ما با شما تماس بگیرند.</p>
+    <p style="text-align:center; color:#ccc; font-size:16px;">لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما با شما تماس بگیرند.</p>
     <hr style="border:1px solid #d4af37;"><br>
 
     <form onsubmit="sendRequest(); return false;">
       <label>نام و نام خانوادگی:</label><br>
-      <input type="text" id="name" required
-             style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff;"><br>
+      <input type="text" id="name" required class="reserve-input"><br>
 
       <label>شماره تماس:</label><br>
-      <input type="text" id="phone" required
-             style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff;"><br>
+      <input type="text" id="phone" required class="reserve-input"><br>
 
       <input type="hidden" id="car" value="تویوتا C-HR">
 
       <label>تاریخ شروع اجاره:</label><br>
-      <input type="text" id="start" required
-             style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff;"><br>
+      <input type="text" id="start" class="pdate reserve-input" autocomplete="off" required><br>
 
       <label>تاریخ پایان اجاره:</label><br>
-      <input type="text" id="end" required
-             style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff;"><br><br>
+      <input type="text" id="end" class="pdate reserve-input" autocomplete="off" required><br><br>
 
       <button type="submit"
               style="width:100%; padding:16px; background:#d4af37; color:#000; font-size:20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
@@ -88,30 +84,29 @@
       </button>
     </form>
 
+    <!-- پیام تشکر -->
     <p id="thanksMsg" style="text-align:center; color:#d4af37; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
-      ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند.
+      ✅ درخواست شما با موفقیت ارسال شد.<br>
+      🙏 از اعتماد شما به رنت لاکچری سپاسگزاریم. کارشناسان ما به زودی با شما تماس می‌گیرند.
     </p>
   </section>
 
   <!-- دکمه بازگشت -->
   <a href="index.html" class="back-btn">⬅ بازگشت به صفحه اصلی</a>
 
+  <!-- فعال‌سازی تقویم شمسی -->
   <script>
-    // فعال‌سازی تقویم شمسی
-    $(document).ready(function(){
-      $("#start").MdPersianDateTimePicker({
-        targetTextSelector: "#start",
-        dateFormat: "yyyy/MM/dd",
-        isGregorian: false
-      });
-      $("#end").MdPersianDateTimePicker({
-        targetTextSelector: "#end",
-        dateFormat: "yyyy/MM/dd",
-        isGregorian: false
-      });
+    $(document).ready(function() {
+      if (typeof $.fn.persianDatepicker === 'function') {
+        $('.pdate').persianDatepicker({
+          format: 'YYYY/MM/DD',
+          autoClose: true,
+          initialValue: false,
+          observer: true
+        });
+      }
     });
 
-    // ارسال اطلاعات به واتساپ
     function sendRequest() {
       let name  = document.getElementById("name").value;
       let phone = document.getElementById("phone").value;
