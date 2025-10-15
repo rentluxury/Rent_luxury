@@ -75,3 +75,11 @@
   35% { opacity: 0; }
   100% { opacity: 0; }
 }
+
+.car-card img {
+  width: 100%;
+  height: 250px;        /* ارتفاع یکسان برای همه ماشین‌ها */
+  object-fit: cover;    /* عکس رو بدون کشیدگی تنظیم می‌کنه */
+  border-radius: 10px;
+}
+ 
