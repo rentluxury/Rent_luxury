@@ -85,7 +85,66 @@
   <p style="margin-top:20px; font-size:24px; color:#d4af37; font-weight:bold;">
     📞 09122307010 - 09124253122
   </p>
-  
+
+    <!-- دکمه منوی همبرگری -->
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<!-- منو -->
+<nav class="menu" id="menu">
+  <a href="index.html">خانه</a>
+  <a href="#cars">خودروهای موجود</a>
+  <a href="blog.html">وبلاگ</a>
+  <a href="#contact">تماس با ما</a>
+  <a href="#">🇮🇷 فارسی</a> | <a href="#">🇬🇧 English</a>
+</nav>
+
+<style>
+/* استایل دکمه همبرگری */
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+
+/* منوی پنهان */
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: right;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1999;
+}
+
+/* لینک‌های منو */
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu a:hover {
+  background: #f4f4f4;
+}
+</style>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>    
 </header>
 
 <!-- معرفی سایت -->
