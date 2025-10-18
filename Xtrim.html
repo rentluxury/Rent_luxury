@@ -124,5 +124,48 @@
     }
   </script>
 
+  <script>
+(function(){
+  const btn = document.getElementById('rl-hamburger-btn');
+  const nav = document.getElementById('rl-main-nav');
+  if(!btn || !nav) return;
+
+  function openNav(){
+    nav.classList.remove('hidden');
+    nav.classList.add('open');
+    document.body.classList.add('rl-nav-open');
+  }
+  function closeNav(){
+    nav.classList.remove('open');
+    nav.classList.add('hidden');
+    document.body.classList.remove('rl-nav-open');
+  }
+
+  btn.addEventListener('click', function(e){
+    if(nav.classList.contains('open')) closeNav();
+    else openNav();
+  });
+
+  // close when clicking a link (mobile)
+  nav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=> closeNav());
+  });
+
+  // close on ESC
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeNav();
+  });
+
+  // close when clicking outside (desktop)
+  document.addEventListener('click', function(e){
+    if(nav.classList.contains('open')){
+      if(!nav.contains(e.target) && e.target !== btn){
+        closeNav();
+      }
+    }
+  });
+})();
+</script>
+  
 </body>
 </html>
