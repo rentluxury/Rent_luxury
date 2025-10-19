@@ -82,7 +82,7 @@
   object-fit: cover;    /* عکس رو بدون کشیدگی تنظیم می‌کنه */
   border-radius: 10px;
 }
- 
+ /*استایل منوی همبرگری*/
 .menu-container {
   position: absolute;
   top: 20px;
