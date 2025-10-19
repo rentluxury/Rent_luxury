@@ -125,3 +125,24 @@
 .menu-content.show {
   display: block;
 }
+
+/* آیکون منوی همبرگری */
+.menu-btn {
+  font-size: 40px;   /* بزرگ‌تر کردن آیکون */
+  cursor: pointer;
+  color: #333;
+}
+
+/* نوشته‌های داخل منو */
+.menu-content a {
+  display: block;
+  padding: 15px;
+  font-size: 22px;   /* بزرگ‌تر شدن متن لینک‌ها */
+  font-family: Tahoma, Arial, sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-content a:hover {
+  background: #f1f1f1;
+}
