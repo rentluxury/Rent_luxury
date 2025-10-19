@@ -83,6 +83,7 @@
   border-radius: 10px;
 }
  /*استایل منوی همبرگری*/
+/* جای منو در صفحه */
 .menu-container {
   position: absolute;
   top: 20px;
@@ -90,19 +91,22 @@
   z-index: 1000;
 }
 
+/* دکمه‌ی سه خطی */
 .menu-btn {
-  font-size: 28px;
+  font-size: 60px;        /* بزرگ کردن آیکون */
   cursor: pointer;
-  background: #000;
-  color: #fff;
+  background: #000;       /* بک‌گراند مشکی */
+  color: #fff;            /* خطوط سفید */
   padding: 10px 15px;
   border-radius: 6px;
+  border: none;
 }
 
+/* محتوای منو (اول مخفی) */
 .menu-content {
   display: none;
   position: absolute;
-  top: 50px;
+  top: 70px;
   right: 0;
   background: #fff;
   border: 1px solid #ddd;
@@ -111,38 +115,22 @@
   text-align: right;
 }
 
-.menu-content a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #000;
-}
-
-.menu-content a:hover {
-  background: #f0f0f0;
-}
-
-.menu-content.show {
-  display: block;
-}
-
-/* سایزآیکون منوی همبرگری */
-.menu-btn {
-  font-size: 60px;   /* بزرگ‌تر کردن آیکون */
-  cursor: pointer;
-  color: #fff;
-}
-
-/* نوشته‌های داخل منو */
+/* لینک‌ها */
 .menu-content a {
   display: block;
   padding: 18px;
-  font-size: 26px;   /* بزرگ‌تر شدن متن لینک‌ها */
+  font-size: 26px;     /* بزرگ‌تر شدن متن لینک‌ها */
   font-family: Tahoma, Arial, sans-serif;
   color: #000;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .menu-content a:hover {
   background: #f1f1f1;
+}
+
+/* نمایش منو وقتی فعال است */
+.menu-content.show {
+  display: block;
 }
