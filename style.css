@@ -134,3 +134,31 @@
 .menu-content.show {
   display: block;
 }
+
+/* متن مقاله خلاصه در صفحه اصلی */
+.article-preview {
+  font-size: 20px;       /* سایز متن بزرگ‌تر */
+  line-height: 1.8;      /* فاصله بین خطوط */
+  color: #333;
+  text-align: justify;   /* متن مرتب */
+  margin: 20px auto;
+  max-width: 800px;      /* عرض محدود برای خوانایی */
+}
+
+/* دکمه ادامه مطلب */
+.read-more {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  font-size: 18px;       /* متن دکمه بزرگ‌تر */
+  font-weight: bold;
+  color: #fff;
+  background-color: #d4af37; /* طلایی */
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.read-more:hover {
+  background-color: #b48a2c; /* طلایی تیره‌تر وقتی روش می‌ری */
+}
