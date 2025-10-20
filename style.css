@@ -183,3 +183,8 @@
   text-align: right;
   padding-right: 20px; /* فاصله مناسب از راست */
 }
+/* تیترهای شماره‌دار داخل مقاله راست‌چین بشن */
+.article-content h2 {
+  direction: rtl;
+  text-align: right;
+}
