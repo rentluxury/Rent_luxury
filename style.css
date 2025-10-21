@@ -1,190 +1,156 @@
-/* 🔹 بخش معرفی */
-.intro {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  color: white;
-  text-align: center;
+/* ====== عمومی ====== */
+body{font-family:Tahoma, Arial, sans-serif;background:#f4f4f4;color:#333;margin:0;padding:0}
+
+/* ====== معرفی / اسلایدشو ====== */
+/* اگر در HTML از .intro و .intro-text و .slides استفاده می‌کنی، آنها را نگه دار.
+   اگر نه، کافیست همین .slideshow برای نمایش تصاویر اسلایدی باشد. */
+.intro{position:relative;width:100%;height:400px;overflow:hidden;color:#fff;text-align:center}
+
+/* اسلایدشو (ادغام شده) */
+.slideshow{
+  width:100%;
+  max-width:900px;
+  aspect-ratio:16/9;
+  margin:40px auto;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+.slideshow img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  top:0;left:0;
+  animation:slide 20s infinite;
+  opacity:0;
+}
+.slideshow img:nth-child(1){animation-delay:0s}
+.slideshow img:nth-child(2){animation-delay:4s}
+.slideshow img:nth-child(3){animation-delay:8s}
+.slideshow img:nth-child(4){animation-delay:12s}
+.slideshow img:nth-child(5){animation-delay:16s}
+@keyframes slide{
+  0%{opacity:0}
+  10%{opacity:1}
+  25%{opacity:1}
+  35%{opacity:0}
+  100%{opacity:0}
 }
 
-/* 🔹 اسلایدشو */
-.slideshow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+/* ====== کارت خودرو ====== */
+.car-card img{
+  width:100%;
+  height:250px;      /* یک ارتفاع ثابت برای همه کارت‌ها */
+  object-fit:cover;
+  border-radius:10px;
 }
 
-.slides {
-  display: none;
-  width: 100%;
-  height: 100%;
+/* ====== منوی همبرگری ====== */
+.menu-container{
+  position:absolute;
+  top:20px;
+  right:20px;
+  z-index:1000;
+}
+.menu-btn{
+  font-size:60px;      /* اندازه آیکون */
+  cursor:pointer;
+  background:#000;
+  color:#fff;
+  padding:10px 15px;
+  border-radius:6px;
+  border:none;
+}
+.menu-content{
+  display:none;
+  position:absolute;
+  top:70px;
+  right:0;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:10px;
+  text-align:right;
+  min-width:220px;    /* پهنای پایه */
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+.menu-content.show{display:block}
+.menu-content a{
+  display:block;
+  padding:14px 18px;
+  font-size:22px;     /* اندازه متن لینک‌ها */
+  font-family:Tahoma, Arial, sans-serif;
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+}
+.menu-content a:hover{background:#f1f1f1}
+
+/* ====== نمای خلاصه مقاله در صفحه اصلی ====== */
+.article-preview{
+  font-size:20px;
+  line-height:1.8;
+  color:#333;
+  text-align:justify;
+  margin:20px auto;
+  max-width:800px;
+}
+.read-more{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 24px;
+  font-size:18px;
+  font-weight:bold;
+  color:#fff;
+  background:#d4af37;
+  border-radius:8px;
+  text-decoration:none;
+  transition:0.2s;
+}
+.read-more:hover{background:#b48a2c}
+
+/* ====== هدر وبلاگ ====== */
+.blog-header{background:#000;padding:20px;text-align:center;font-family:Tahoma,Arial,sans-serif}
+.blog-header h1{margin:0;font-size:28px;color:#d4af37}
+
+/* ====== محتوا/مقاله ====== */
+.article-content{
+  max-width:900px;
+  margin:30px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.06);
+  line-height:1.8;
+  color:#333;
+}
+.article-content h1, .article-content h2{color:#222}
+.article-content h1{text-align:center}
+.article-content p{text-align:justify}
+
+/* لیست‌ها و تیترها راست‌چین برای متن فارسی */
+.article-content ol,
+.article-content ul{
+  direction:rtl;
+  text-align:right;
+  padding-right:20px;
+  margin:12px 0;
+}
+.article-content h2{
+  direction:rtl;
+  text-align:right;
 }
 
-.slides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 🔹 متن روی عکس */
-.intro-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.5);
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 20px;
-}
-
-/* --- اسلایدشو ماشین‌ها --- */
-.slideshow {
-  width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16/9;
-  margin: 40px auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.slideshow img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: slide 20s infinite;
-  opacity: 0;
-}
-
-.slideshow img:nth-child(1) { animation-delay: 0s; }
-.slideshow img:nth-child(2) { animation-delay: 4s; }
-.slideshow img:nth-child(3) { animation-delay: 8s; }
-.slideshow img:nth-child(4) { animation-delay: 12s; }
-.slideshow img:nth-child(5) { animation-delay: 16s; }
-
-@keyframes slide {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  25% { opacity: 1; }
-  35% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-.car-card img {
-  width: 100%;
-  height: 250px;        /* ارتفاع یکسان برای همه ماشین‌ها */
-  object-fit: cover;    /* عکس رو بدون کشیدگی تنظیم می‌کنه */
-  border-radius: 10px;
-}
- /*استایل منوی همبرگری*/
-/* جای منو در صفحه */
-.menu-container {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-/* دکمه‌ی سه خطی */
-.menu-btn {
-  font-size: 60px;        /* بزرگ کردن آیکون */
-  cursor: pointer;
-  background: #000;       /* بک‌گراند مشکی */
-  color: #fff;            /* خطوط سفید */
-  padding: 10px 15px;
-  border-radius: 6px;
-  border: none;
-}
-
-/* محتوای منو (اول مخفی) */
-.menu-content {
-  display: none;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 10px;
-  text-align: right;
-}
-
-/* لینک‌ها */
-.menu-content a {
-  display: block;
-  padding: 18px;
-  font-size: 26px;     /* بزرگ‌تر شدن متن لینک‌ها */
-  font-family: Tahoma, Arial, sans-serif;
-  color: #000;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.menu-content a:hover {
-  background: #f1f1f1;
-}
-
-/* نمایش منو وقتی فعال است */
-.menu-content.show {
-  display: block;
-}
-
-/* متن مقاله خلاصه در صفحه اصلی */
-.article-preview {
-  font-size: 20px;       /* سایز متن بزرگ‌تر */
-  line-height: 1.8;      /* فاصله بین خطوط */
-  color: #333;
-  text-align: justify;   /* متن مرتب */
-  margin: 20px auto;
-  max-width: 800px;      /* عرض محدود برای خوانایی */
-}
-
-/* دکمه ادامه مطلب */
-.read-more {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 24px;
-  font-size: 18px;       /* متن دکمه بزرگ‌تر */
-  font-weight: bold;
-  color: #fff;
-  background-color: #d4af37; /* طلایی */
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.read-more:hover {
-  background-color: #b48a2c; /* طلایی تیره‌تر وقتی روش می‌ری */
-}
-
-/* استایل هدر وبلاگ */
-.blog-header {
-  background: #000;       /* پس‌زمینه مشکی */
-  padding: 20px;
-  text-align: center;
-  font-family: Tahoma, Arial, sans-serif;
-}
-
-.blog-header h1 {
-  margin: 0;
-  font-size: 28px;
-  color: #d4af37;        /* رنگ طلایی متن */
-}
-/* لیست‌های داخل مقاله راست‌چین بشن */
-.article-content ol, 
-.article-content ul {
-  direction: rtl;
-  text-align: right;
-  padding-right: 20px; /* فاصله مناسب از راست */
-}
-/* تیترهای شماره‌دار داخل مقاله راست‌چین بشن */
-.article-content h2 {
-  direction: rtl;
-  text-align: right;
+/* دکمه بازگشت */
+.back-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:10px 20px;
+  background:#d4af37;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
 }
