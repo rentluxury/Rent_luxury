@@ -422,5 +422,55 @@
   }
 </script>
 
+<!-- 📩 کد ارسال نظرات مشتریان به Google Sheet -->
+<script>
+const API_URL = 'https://script.google.com/macros/s/AKfycby4NihTM-lMYHJCyKVgz5a7pN3s-YyS8uk5kDXyUCbzEiA15sLbhlKkw1GAQJp2ZN65Vw/exec';
+const TOKEN = 'put-your-secret-here'; // اگر در Apps Script توکن گذاشتی، اینو عوض کن؛ اگر نه خط token را حذف کن
+
+document.getElementById('reviewForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  document.getElementById('rv_msg').style.display = 'none';
+  document.getElementById('rv_err').style.display = 'none';
+
+  const payload = {
+    name: document.getElementById('rv_name').value.trim(),
+    phone: document.getElementById('rv_phone').value.trim(),
+    rating: document.getElementById('rv_rating').value,
+    review: document.getElementById('rv_review').value.trim(),
+    token: TOKEN
+  };
+
+  try {
+    const resp = await fetch(API_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    try {
+      const j = await resp.json();
+      if (j.status && j.status === 'ok') {
+        document.getElementById('rv_msg').style.display = 'block';
+        document.getElementById('reviewForm').reset();
+      } else {
+        document.getElementById('rv_err').textContent = 'ارسال با خطا مواجه شد.';
+        document.getElementById('rv_err').style.display = 'block';
+      }
+    } catch(errJson) {
+      if (resp.ok) {
+        document.getElementById('rv_msg').style.display = 'block';
+        document.getElementById('reviewForm').reset();
+      } else {
+        document.getElementById('rv_err').textContent = 'خطا در ارسال (کد ' + resp.status + ')';
+        document.getElementById('rv_err').style.display = 'block';
+      }
+    }
+  } catch (err) {
+    console.error(err);
+    document.getElementById('rv_err').textContent = 'خطا در ارتباط با سرور. دوباره تلاش کنید.';
+    document.getElementById('rv_err').style.display = 'block';
+  }
+});
+</script>
+
 </body>
 </html>
