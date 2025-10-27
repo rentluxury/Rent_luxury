@@ -261,6 +261,36 @@
   </div>
 </section>
     
+    <!-- BEGIN review form -->
+<section style="max-width:700px; margin:30px auto; padding:20px;">
+  <h2 style="text-align:center; color:#333;">نظر خود را ثبت کنید</h2>
+  <form id="reviewForm" style="background:#fff; padding:16px; border-radius:8px;">
+    <label>نام (اختیاری)</label><br>
+    <input id="rv_name" type="text" placeholder="نام شما" style="width:100%; padding:8px; margin:8px 0;"><br>
+
+    <label>شماره تماس (اختیاری)</label><br>
+    <input id="rv_phone" type="text" placeholder="مثال: 0912xxxxxxx" style="width:100%; padding:8px; margin:8px 0;"><br>
+
+    <label>امتیاز</label><br>
+    <select id="rv_rating" style="width:100%; padding:8px; margin:8px 0;">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select><br>
+
+    <label>نظر شما</label><br>
+    <textarea id="rv_review" rows="4" required style="width:100%; padding:8px; margin:8px 0;" placeholder="نظر خود را بنویسید..."></textarea><br>
+
+    <button type="submit" style="padding:10px 16px; background:#d4af37; border:none; border-radius:6px; cursor:pointer;">ارسال نظر</button>
+  </form>
+
+  <p id="rv_msg" style="display:none; color:green; text-align:center; margin-top:8px;">✅ نظر شما ثبت شد و پس از تأیید نمایش داده می‌شود.</p>
+  <p id="rv_err" style="display:none; color:red; text-align:center; margin-top:8px;"></p>
+</section>
+<!-- END review form -->
+
     <!-- BEGIN comments block -->
 <section class="comments" style="max-width:900px; margin:30px auto; padding:20px;">
   <h2 style="text-align:center; color:#333; margin-bottom:10px;">نظرات مشتریان</h2>
