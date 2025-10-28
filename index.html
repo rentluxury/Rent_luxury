@@ -422,51 +422,47 @@
   }
 </script>
 
-<!-- 📩 کد ارسال نظرات مشتریان به Google Sheet -->
+<!-- 📩 کد ارسال نظرات (بگذار دقیقاً قبل از </body>) -->
 <script>
 (function(){
-  const API_URL = https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec
-  const TOKEN = 'rLx_2025_Auth_9xY7Z'; // یا '' اگر توکن را غیرفعال کردی
+  const API_URL = 'https://script.google.com/macros/s/AKfycby4NihTM-lMYHJCyKVgz5a7pN3s-YyS8uk5kDXyUCbzEiA15sLbhlKkw1GAQJp2ZN65Vw/exec';
+  const TOKEN = 'rLx_2025_Auth_9xY7Z'; // اگر توکن ندارى این را پاک کن یا رشتهٔ خالی بذار ''
 
-  // helper برای ایمن کردن متن در Console/HTML
   function log(...args){ try{ console.log(...args); }catch(e){} }
 
   document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById('reviewForm');
     if(!form){
-      log('خطا: فرم با id="reviewForm" پیدا نشد. لطفاً id فرم را بررسی کن.');
+      log('خطا: فرم با id="reviewForm" پیدا نشد. لطفاً id را بررسی کن.');
       return;
     }
 
     form.addEventListener('submit', async function(e){
       e.preventDefault();
-      log('فرم ارسال شد — آماده ارسال به API');
+      log('فرم ارسال شد — آمادهٔ ارسال به API');
 
       const name = (document.getElementById('rv_name') || {}).value || '';
       const phone = (document.getElementById('rv_phone') || {}).value || '';
       const rating = (document.getElementById('rv_rating') || {}).value || '';
       const review = (document.getElementById('rv_review') || {}).value || '';
 
-      // لاگ قبل از ارسال
-      log('payload', {name, phone, rating, review, token: TOKEN});
+      const payload = { name, phone, rating, review };
+      if (TOKEN) payload.token = TOKEN;
+
+      log('payload', payload);
 
       try {
         const resp = await fetch(API_URL, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({name, phone, rating, review, token: TOKEN})
+          body: JSON.stringify(payload)
         });
 
-        // لاگ وضعیت شبکه
         log('fetch status', resp.status, resp.statusText);
+        const txt = await resp.text().catch(()=> '');
+        log('response text:', txt);
 
-        // سعی می‌کنیم پاسخ JSON را بخوانیم
-        let txt = '';
-        try { txt = await resp.text(); log('response text:', txt); }
-        catch(errRead){ log('خطا در خواندن پاسخ:', errRead); }
-
-        // اگر وضعیت 200 یا ok بود پیام موفقیت
-        if(resp.ok){
+        if (resp.ok) {
           alert('نظر شما ثبت شد — پس از تأیید نمایش داده می‌شود.');
           form.reset();
         } else {
@@ -474,7 +470,7 @@
         }
       } catch (err) {
         console.error('خطا در fetch:', err);
-        alert('خطا در ارتباط با سرور — لطفاً کنسول (Inspect → Console) را چک کن.');
+        alert('خطا در ارتباط با سرور — Console را چک کن.');
       }
     });
   });
