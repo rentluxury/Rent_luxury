@@ -422,60 +422,61 @@
   }
 </script>
 
-<!-- 📩 کد ارسال نظرات (بگذار دقیقاً قبل از </body>) -->
+<!-- 📩 کد ارسال نظرات (بگذار دقیقاً قبل از </body>) --
+<!-- START review submit script — paste this exactly before </body> -->
 <script>
 (function(){
   const API_URL = 'https://script.google.com/macros/s/AKfycby4NihTM-lMYHJCyKVgz5a7pN3s-YyS8uk5kDXyUCbzEiA15sLbhlKkw1GAQJp2ZN65Vw/exec';
-  const TOKEN = 'rLx_2025_Auth_9xY7Z'; // اگر توکن ندارى این را پاک کن یا رشتهٔ خالی بذار ''
+  const TOKEN = 'rLx_2025_Auth_9xY7Z'; // اگر توکن نداری بگذار '' یا این خط را پاک کن
 
-  function log(...args){ try{ console.log(...args); }catch(e){} }
+  function log(...a){ try{ console.log(...a); }catch(e){} }
 
   document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById('reviewForm');
-    if(!form){
-      log('خطا: فرم با id="reviewForm" پیدا نشد. لطفاً id را بررسی کن.');
-      return;
-    }
+    if (!form) { log('خطا: فرم با id="reviewForm" پیدا نشد.'); return; }
 
     form.addEventListener('submit', async function(e){
       e.preventDefault();
-      log('فرم ارسال شد — آمادهٔ ارسال به API');
+      log('فرم ارسال شد — آماده ارسال');
 
-      const name = (document.getElementById('rv_name') || {}).value || '';
-      const phone = (document.getElementById('rv_phone') || {}).value || '';
-      const rating = (document.getElementById('rv_rating') || {}).value || '';
-      const review = (document.getElementById('rv_review') || {}).value || '';
+      const name = (document.getElementById('rv_name')||{}).value || '';
+      const phone = (document.getElementById('rv_phone')||{}).value || '';
+      const rating = (document.getElementById('rv_rating')||{}).value || '';
+      const review = (document.getElementById('rv_review')||{}).value || '';
 
-      const payload = { name, phone, rating, review };
-      if (TOKEN) payload.token = TOKEN;
-
-      log('payload', payload);
+      // ارسال به صورت form-urlencoded تا preflight نشه (حل CORS رایج)
+      const params = new URLSearchParams();
+      params.append('name', name);
+      params.append('phone', phone);
+      params.append('rating', rating);
+      params.append('review', review);
+      if (TOKEN) params.append('token', TOKEN);
 
       try {
         const resp = await fetch(API_URL, {
           method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(payload)
+          body: params
         });
 
         log('fetch status', resp.status, resp.statusText);
-        const txt = await resp.text().catch(()=> '');
-        log('response text:', txt);
+        const text = await resp.text().catch(()=> '');
+        log('response text:', text);
 
         if (resp.ok) {
-          alert('نظر شما ثبت شد — پس از تأیید نمایش داده می‌شود.');
+          alert('✅ نظر شما ثبت شد — پس از تأیید نمایش داده می‌شود.');
           form.reset();
         } else {
           alert('خطا در ارسال: ' + resp.status);
         }
       } catch (err) {
         console.error('خطا در fetch:', err);
-        alert('خطا در ارتباط با سرور — Console را چک کن.');
+        alert('خطا در ارتباط با سرور — کنسول را چک کنید.');
       }
     });
   });
 })();
 </script>
+<!-- END review submit script -->
 
 </body>
 </html>
