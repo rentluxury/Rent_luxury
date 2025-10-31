@@ -46,6 +46,13 @@ body{font-family:Tahoma, Arial, sans-serif;background:#f4f4f4;color:#333;margin:
   object-fit:cover;
   border-radius:10px;
 }
+/* برای اطمینان از یکسان بودن اندازه عکس‌های لینک‌دار *
+a.car img {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:10px;
+}
 
 /* ====== منوی همبرگری ====== */
 .menu-container{
