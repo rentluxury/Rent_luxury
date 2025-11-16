@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- سئو -->
+    <title>اجاره نیسان سلفی 2025 در تهران | رنت لاکچری</title>
+    <meta name="description" content="اجاره نیسان سلفی 2025 در تهران با شرایط آسان، قیمت مناسب و امکان رزرو آنلاین. مناسب سفرهای شهری و بین‌شهری. اتو رنت پیرا - رنت لاکچری.">
+    <meta name="keywords" content="اجاره نیسان سلفی, اجاره Sylphy, اجاره نیسان 2025, اجاره خودرو تهران, رنت لاکچری">
+
+    <!-- فایل استایل اصلی -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- تقویم شمسی -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
+</head>
+<body>
+
+    <div class="car-page">
+
+        <h1>اجاره نیسان سلفی 2025</h1>
+
+        <img src="nissansylphy2025.jpeg" alt="اجاره نیسان سلفی 2025 در تهران" class="car-img-page">
+
+        <p class="car-desc">
+            نیسان سلفی 2025 یک سدان اقتصادی، کم‌مصرف و بسیار راحت است که برای استفاده روزمره و سفرهای طولانی ایده‌آل محسوب می‌شود.
+            طراحی مدرن، کابین جادار و امکانات مناسب، این خودرو را به یکی از بهترین انتخاب‌ها برای اجاره در تهران تبدیل کرده است.
+        </p>
+
+        <h2>مشخصات فنی</h2>
+        <table class="spec-table">
+            <tr><td>مدل</td><td>2025</td></tr>
+            <tr><td>نوع بدنه</td><td>سدان</td></tr>
+            <tr><td>موتور</td><td>1.6 لیتری</td></tr>
+            <tr><td>قدرت</td><td>118 اسب بخار</td></tr>
+            <tr><td>مصرف سوخت</td><td>6.5 لیتر در 100 کیلومتر</td></tr>
+            <tr><td>گیربکس</td><td>اتوماتیک CVT</td></tr>
+            <tr><td>ظرفیت</td><td>5 نفر</td></tr>
+        </table>
+
+        <h2>هزینه اجاره</h2>
+         <div class="price-box">
+    <h3>شروع قیمت از ۱۲,۰۰۰,۰۰۰ تومان در روز</h3>
+    <p class="note">اعلام قیمت بستگی به مدت اجاره، مدل خودرو و تاریخ مدنظر دارد.</p>
+</div>
+        
+
+        <h2>رزرو آنلاین</h2>
+
+        <form class="reserve-box">
+
+            <label>نام و نام‌خانوادگی:</label>
+            <input type="text" class="reserve-input" required>
+
+            <label>شماره تماس:</label>
+            <input type="tel" class="reserve-input" required>
+
+            <label>تاریخ شروع اجاره:</label>
+            <input type="text" id="start" class="reserve-input pdate" autocomplete="off" required>
+
+            <label>تاریخ پایان اجاره:</label>
+            <input type="text" id="end" class="reserve-input pdate" autocomplete="off" required>
+
+            <button type="submit" class="reserve-btn">ثبت رزرو</button>
+        </form>
+
+    </div>
+
+    <!-- فعال‌سازی تقویم شمسی -->
+    <script>
+        $(document).ready(function () {
+            $('.pdate').persianDatepicker({
+                format: 'YYYY/MM/DD',
+                autoClose: true,
+                initialValue: false
+            });
+        });
+    </script>
+
+</body>
+</html>
