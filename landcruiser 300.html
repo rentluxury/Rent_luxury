@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اجاره لندکروزر 300 در تهران | رنت لاکچری</title>
+  <meta name="description" content="اجاره لندکروزر 300 مدل جدید در تهران با بهترین قیمت. شاسی‌بلند قدرتمند، لوکس و مناسب سفرهای جاده‌ای و شهری. رزرو سریع از طریق واتساپ.">
+  <meta name="keywords" content="اجاره لندکروزر, اجاره لندکروزر 300, اجاره ماشین شاسی بلند, اجاره ماشین آفرود, اجاره تویوتا در تهران, رنت لاکچری">
+  <meta name="author" content="Rent Luxury">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {font-family:Tahoma,sans-serif;background:#f4f4f4;margin:0;padding:0;text-align:center}
+    header {background:#000;color:#fff;padding:20px}
+    section {padding:30px}
+    .car-img {max-width:500px;width:100%;height:350px;object-fit:cover;border-radius:10px;margin:20px auto;display:block}
+    .intro {font-size:18px;line-height:1.9;margin:20px auto;max-width:800px;text-align:justify}
+    .specs {max-width:700px;margin:10px auto;text-align:right;line-height:2}
+    .back-btn {display:inline-block;margin:30px auto;padding:12px 25px;background:#d4af37;color:#000;font-weight:bold;border-radius:6px;text-decoration:none;transition:.3s}
+    .back-btn:hover {background:#000;color:#d4af37}
+    .reserve-input {width:100%;padding:12px;margin:8px 0;border:1px solid #d4af37;border-radius:6px;background:#111;color:#fff;font-size:16px;box-sizing:border-box}
+
+    /* کادر قیمت */
+    .price-box {
+      border: 2px solid #d4af37;
+      border-radius: 10px;
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      max-width: 400px;
+      margin: 30px auto;
+      text-align: center;
+    }
+    .price-box h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+    .price-box .note {
+      font-size: 15px;
+      color: #ccc;
+      line-height: 1.8;
+    }
+  </style>
+
+  <!-- تقویم شمسی -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+</head>
+<body>
+
+  <!-- هدر -->
+  <header>
+    <h1>لندکروزر 300 (Land Cruiser 300)</h1>
+  </header>
+
+  <!-- معرفی خودرو -->
+  <section>
+    <img src="landcruiser300.jpeg" alt="اجاره لندکروزر 300 در تهران - رنت لاکچری" class="car-img">
+
+    <div class="intro">
+      <h2>اجاره لندکروزر 300 در تهران</h2>
+      <p>
+        لندکروزر 300 نسل جدید یکی از محبوب‌ترین و قدرتمندترین شاسی‌بلندهای جهان است.  
+        این خودرو با کیفیت ساخت بالا، <strong>قدرت آفرود فوق‌العاده</strong>، کابین جادار و امکانات رفاهی مدرن،  
+        انتخابی عالی برای <strong>سفرهای جاده‌ای، کوهستانی و استفاده تشریفاتی</strong> است.  
+        با رنت لاکچری می‌توانید این خودرو را با شرایط آسان و پشتیبانی حرفه‌ای اجاره کنید.
+      </p>
+    </div>
+
+    <ul class="specs">
+      <li>🔹 موتور قدرتمند با توان بالا در مسیرهای سخت</li>
+      <li>🔹 سیستم تعلیق حرفه‌ای مناسب آفرود</li>
+      <li>🔹 کابین بزرگ و خانوادگی</li>
+      <li>🔹 امکانات رفاهی و ایمنی روز دنیا</li>
+      <li>🔹 مناسب سفرهای طولانی و مسیرهای غیرآسفالته</li>
+    </ul>
+
+    <!-- کادر قیمت -->
+    <div class="price-box">
+      <h3>شروع قیمت از ۱۹,۵۰۰,۰۰۰ تومان در روز</h3>
+      <p class="note">اعلام قیمت بستگی به مدت اجاره، مدل خودرو و تاریخ مدنظر دارد.</p>
+    </div>
+  </section>
+
+  <!-- فرم رزرو -->
+  <section style="max-width:600px; margin:40px auto; padding:35px; border:2px solid #d4af37; border-radius:14px; background:#000; color:#fff; font-size:18px;">
+    <h2 style="text-align:center; color:#d4af37; font-size:26px;">🔑 فرم رزرو خودرو</h2>
+    <p style="text-align:center; color:#ccc; font-size:16px;">لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما با شما تماس بگیرند.</p>
+    <hr style="border:1px solid #d4af37;"><br>
+
+    <form onsubmit="sendRequest(); return false;">
+      <label>نام و نام خانوادگی:</label><br>
+      <input type="text" id="name" required class="reserve-input"><br>
+
+      <label>شماره تماس:</label><br>
+      <input type="text" id="phone" required class="reserve-input"><br>
+
+      <input type="hidden" id="car" value="لندکروزر 300">
+
+      <label>تاریخ شروع اجاره:</label><br>
+      <input type="text" id="start" class="pdate reserve-input" autocomplete="off" required><br>
+
+      <label>تاریخ پایان اجاره:</label><br>
+      <input type="text" id="end" class="pdate reserve-input" autocomplete="off" required><br><br>
+
+      <button type="submit"
+              style="width:100%; padding:16px; background:#d4af37; color:#000; font-size:20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
+        🚗 ارسال درخواست از طریق واتساپ
+      </button>
+    </form>
+
+    <p id="thanksMsg" style="text-align:center; color:#d4af37; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
+      ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند.
+    </p>
+  </section>
+
+  <!-- بازگشت -->
+  <a href="index.html" class="back-btn">⬅ بازگشت به صفحه اصلی</a>
+
+  <script>
+    $(document).ready(function() {
+      $('.pdate').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        initialValue: false,
+        observer: true
+      });
+    });
+
+    function sendRequest() {
+      let name  = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let car   = document.getElementById("car").value;
+      let start = document.getElementById("start").value;
+      let end   = document.getElementById("end").value;
+
+      let msg = `سلام، من ${name} هستم. شماره تماس: ${phone}. می‌خواهم خودرو ${car} را از تاریخ ${start} تا ${end} رزرو کنم.`;
+      let url = "https://wa.me/989124253122?text=" + encodeURIComponent(msg);
+
+      window.open(url, "_blank");
+      document.getElementById("thanksMsg").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
