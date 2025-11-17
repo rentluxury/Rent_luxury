@@ -48,6 +48,24 @@ a.car img,
   object-fit: cover; /* برش خودکار برای هماهنگی */
   border-radius: 10px;
 }
+.car-box {
+    width: 48%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 1%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.car-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
 /* ====== منوی همبرگری ====== */
 .menu-container{
