@@ -4,13 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- سئو -->
     <title>اجاره نیسان سلفی 2025 در تهران | رنت لاکچری</title>
     <meta name="description" content="اجاره نیسان سلفی 2025 در تهران با شرایط آسان، قیمت مناسب و امکان رزرو آنلاین. مناسب سفرهای شهری و بین‌شهری. اتو رنت پیرا - رنت لاکچری.">
     <meta name="keywords" content="اجاره نیسان سلفی, اجاره Sylphy, اجاره نیسان 2025, اجاره خودرو تهران, رنت لاکچری">
 
-    <!-- فایل استایل اصلی -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- ⭐⭐⭐ این استایل که لازم داری — مشکل عکس + کادر قیمت اینجاست ⭐⭐⭐ -->
+    <style>
+        /* عکس صفحه ماشین — یکسان با بقیه */
+        .car-img-page {
+            max-width: 500px;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* باکس قیمت یکسان */
+        .price-box {
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            max-width: 400px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .price-box h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .price-box .note {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+    </style>
 
     <!-- تقویم شمسی -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
@@ -44,11 +80,10 @@
         </table>
 
         <h2>هزینه اجاره</h2>
-         <div class="price-box">
-    <h3>شروع قیمت از ۱۲,۰۰۰,۰۰۰ تومان در روز</h3>
-    <p class="note">اعلام قیمت بستگی به مدت اجاره، مدل خودرو و تاریخ مدنظر دارد.</p>
-</div>
-        
+        <div class="price-box">
+            <h3>شروع قیمت از ۱۲,۰۰۰,۰۰۰ تومان در روز</h3>
+            <p class="note">اعلام قیمت بستگی به مدت اجاره، مدل خودرو و تاریخ مدنظر دارد.</p>
+        </div>
 
         <h2>رزرو آنلاین</h2>
 
@@ -71,7 +106,6 @@
 
     </div>
 
-    <!-- فعال‌سازی تقویم شمسی -->
     <script>
         $(document).ready(function () {
             $('.pdate').persianDatepicker({
