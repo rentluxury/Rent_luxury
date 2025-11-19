@@ -1,53 +1,40 @@
-/* ====== عمومی ====== */
-body{font-family:Tahoma, Arial, sans-serif;background:#f4f4f4;color:#333;margin:0;padding:0}
-
-/* ====== معرفی / اسلایدشو ====== */
-/* اگر در HTML از .intro و .intro-text و .slides استفاده می‌کنی، آنها را نگه دار.
-   اگر نه، کافیست همین .slideshow برای نمایش تصاویر اسلایدی باشد. */
-.intro{position:relative;width:100%;height:400px;overflow:hidden;color:#fff;text-align:center}
-
-/* اسلایدشو (ادغام شده) */
-.slideshow{
-  width:100%;
-  max-width:900px;
-  aspect-ratio:16/9;
-  margin:40px auto;
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.3);
-}
-.slideshow img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  top:0;left:0;
-  animation:slide 20s infinite;
-  opacity:0;
-}
-.slideshow img:nth-child(1){animation-delay:0s}
-.slideshow img:nth-child(2){animation-delay:4s}
-.slideshow img:nth-child(3){animation-delay:8s}
-.slideshow img:nth-child(4){animation-delay:12s}
-.slideshow img:nth-child(5){animation-delay:16s}
-@keyframes slide{
-  0%{opacity:0}
-  10%{opacity:1}
-  25%{opacity:1}
-  35%{opacity:0}
-  100%{opacity:0}
+/* ======== ریست ساده ======== */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f7f7f7;
+    direction: rtl;
 }
 
-/* ==== كارت خودرو ==== */
-.car-card img,
-a.car img,
-.car-img {
-  width: 100%;
-  height: 250px; /* ارتفاع ثابت برای همه */
-  object-fit: cover; /* برش خودکار برای هماهنگی */
-  border-radius: 10px;
+/* ======== هدر ======== */
+header {
+    padding: 30px 10px;
+    text-align: center;
 }
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.8;
+    color: #444; /* خاکستری ملایم */
+}
+
+header p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666; /* رنگ بی‌حال‌تر */
+}
+
+/* ======== عنوان بخش‌ها ======== */
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    margin: 40px 0 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ======== باکس خودرو ======== */
 .car-box {
     width: 48%;
     background: #fff;
@@ -60,6 +47,7 @@ a.car img,
     vertical-align: top;
 }
 
+/* عکس خودرو */
 .car-img {
     width: 100%;
     height: 250px;
@@ -67,135 +55,94 @@ a.car img,
     border-radius: 10px;
 }
 
-/* ====== منوی همبرگری ====== */
-.menu-container{
-  position:absolute;
-  top:20px;
-  right:20px;
-  z-index:1000;
-}
-.menu-btn{
-  font-size:60px;      /* اندازه آیکون */
-  cursor:pointer;
-  background:#000;
-  color:#fff;
-  padding:10px 15px;
-  border-radius:6px;
-  border:none;
-}
-.menu-content{
-  display:none;
-  position:absolute;
-  top:70px;
-  right:0;
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:6px;
-  padding:10px;
-  text-align:right;
-  min-width:220px;    /* پهنای پایه */
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-}
-.menu-content.show{display:block}
-.menu-content a{
-  display:block;
-  padding:14px 18px;
-  font-size:22px;     /* اندازه متن لینک‌ها */
-  font-family:Tahoma, Arial, sans-serif;
-  color:#000;
-  text-decoration:none;
-  font-weight:600;
-}
-.menu-content a:hover{background:#f1f1f1}
-
-/* ====== نمای خلاصه مقاله در صفحه اصلی ====== */
-.article-preview{
-  font-size:20px;
-  line-height:1.8;
-  color:#333;
-  text-align:justify;
-  margin:20px auto;
-  max-width:800px;
-}
-.read-more{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 24px;
-  font-size:18px;
-  font-weight:bold;
-  color:#fff;
-  background:#d4af37;
-  border-radius:8px;
-  text-decoration:none;
-  transition:0.2s;
-}
-.read-more:hover{background:#b48a2c}
-
-/* ====== هدر وبلاگ ====== */
-.blog-header{background:#000;padding:20px;text-align:center;font-family:Tahoma,Arial,sans-serif}
-.blog-header h1{margin:0;font-size:28px;color:#d4af37}
-
-/* ====== محتوا/مقاله ====== */
-.article-content{
-  max-width:900px;
-  margin:30px auto;
-  background:#fff;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 0 10px rgba(0,0,0,0.06);
-  line-height:1.8;
-  color:#333;
-}
-.article-content h1, .article-content h2{color:#222}
-.article-content h1{text-align:center}
-.article-content p{text-align:justify}
-
-/* لیست‌ها و تیترها راست‌چین برای متن فارسی */
-.article-content ol,
-.article-content ul{
-  direction:rtl;
-  text-align:right;
-  padding-right:20px;
-  margin:12px 0;
-}
-.article-content h2{
-  direction:rtl;
-  text-align:right;
+/* عنوان خودرو */
+.car-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
 }
 
-/* دکمه بازگشت */
-.back-btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:10px 20px;
-  background:#d4af37;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
+/* دکمه‌ها */
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
-.price-box {
-  background: #000;              /* پس‌زمینه مشکی برای هماهنگی با سایت */
-  color: #fff;                   /* نوشته سفید */
-  border: 3px solid #d4af37;     /* کادر طلایی پررنگ‌تر */
-  border-radius: 12px;
-  padding: 25px;
-  max-width: 420px;
-  margin: 40px auto;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* درخشش طلایی ملایم دور کادر */
+.btn:hover {
+    background: #555;
 }
 
-.price-box h3 {
-  color: #d4af37;
-  margin-bottom: 10px;
-  font-size: 22px;
-  font-weight: bold;
+/* ======== فرم تمدید قرارداد ======== */
+.form-box {
+    width: 90%;
+    max-width: 480px;
+    background: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
-.price-box .note {
-  color: #ccc;
-  font-size: 15px;
-  line-height: 1.7;
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #444;
+}
+
+/* ======== فرم نظرات مشتریان ======== */
+.review-box {
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.review-box textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    resize: none;
+}
+
+/* ======== فوتر ======== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 14px;
 }
