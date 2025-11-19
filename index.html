@@ -279,6 +279,66 @@
     }
     </script>
 
+        <!-- فرم تمدید قرارداد -->
+<section style="max-width:600px; margin:40px auto; padding:35px; border:2px solid #d4af37; border-radius:14px; background:#000; color:#fff; font-size:18px;">
+
+  <h2 style="text-align:center; color:#d4af37; font-size:26px;">📝 فرم تمدید قرارداد</h2>
+  <p style="text-align:center; color:#ccc; font-size:16px;">
+    اگر قصد تمدید مدت اجاره خودروی خود را دارید، لطفاً اطلاعات زیر را وارد کنید.
+  </p>
+  <hr style="border:1px solid #d4af37;"><br>
+
+  <form onsubmit="sendRenew(); return false;">
+    
+    <label>نام و نام خانوادگی:</label><br>
+    <input type="text" id="renew_name" required 
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <label>شماره تماس:</label><br>
+    <input type="text" id="renew_phone" required 
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <label>نام خودرو:</label><br>
+    <input type="text" id="renew_car" required 
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <label>تمدید تا چه تاریخی؟</label><br>
+    <input type="text" id="renew_end" class="pdate" autocomplete="off" required
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <button type="submit"
+            style="width:100%; padding:16px; background:#d4af37; color:#000; font-size:20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
+      🔄 ارسال درخواست تمدید از طریق واتساپ
+    </button>
+
+  </form>
+
+  <p id="renewThanks" 
+     style="text-align:center; color:#d4af37; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
+    ✅ درخواست تمدید شما با موفقیت ارسال شد.
+  </p>
+
+</section>
+
+<script>
+  function sendRenew() {
+    let name  = document.getElementById("renew_name").value;
+    let phone = document.getElementById("renew_phone").value;
+    let car   = document.getElementById("renew_car").value;
+    let end   = document.getElementById("renew_end").value;
+
+    let msg = "سلام، من " + name +
+              " هستم. شماره تماس: " + phone +
+              ". می‌خواهم قرارداد اجاره خودرو " + car +
+              " را تا تاریخ " + end + " تمدید کنم.";
+
+    let url = "https://wa.me/989124253122?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+
+    document.getElementById("renewThanks").style.display = "block";
+  }
+</script>
+        
     <!-- 📌 بخش مقاله در صفحه اصلی -->
 <section style="margin:50px auto; max-width:900px; padding:20px; border:1px solid #ddd; border-radius:10px; background:#f9f9f9; font-family:tahoma;">
   <h2 style="text-align:center; color:#333;">موارد مورد نیاز برای اجاره خودرو</h2>
