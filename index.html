@@ -1,216 +1,565 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
+<!DOCTYPE html>
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rent Luxury | رنت لاکچری</title>
-    <link rel="stylesheet" href="style.css">
+    <title>رنت لاکچری | اجاره خودرو لوکس در تهران</title>
 
-    <!-- تقویم شمسی -->
+‎    <!-- متا برای سئو -->
+    <meta name="description" content="رنت لاکچری | اجاره خودرو لوکس در تهران - بنز، بی‌ام‌و، لندکروز، تالیسمان، سوناتا و سایر خودروهای لوکس. رزرو آنلاین خودرو بدون راننده یا با راننده.">
+    <meta name="keywords" content="رنت لاکچری, اجاره خودرو, اجاره ماشین, اجاره خودرو لوکس, اجاره بنز, اجاره بی ام و, اجاره لندکروز, اجاره خودرو تهران, اجاره خودرو بدون راننده">
+    <meta name="author" content="Rent Luxury">
+
+‎    <!-- آیکون -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+‎    <!-- استایل اصلی سایت -->
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000;
+            color: rgba(255,255,255,0.7); /* سفید کمرنگ */
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        header p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .car-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            width: 320px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .car-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .car-box h3 {
+            margin-top: 12px;
+            font-size: 20px;
+        }
+
+        .car-box p {
+            font-size: 15px;
+            margin-top: 8px;
+            color: #444;
+        }
+    </style>
+
+‎    <!-- تقویم شمسی -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
 </head>
-
 <body>
-
-    <!-- منوی همبرگری -->
-    <div class="menu-container">
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-        <div id="menu" class="menu-content">
-            <a href="#cars">خودروها</a>
-            <a href="#reserve">رزرو خودرو</a>
-            <a href="#extend">تمدید قرارداد</a>
-            <a href="#rules">شرایط اجاره</a>
-            <a href="#review">ثبت نظر</a>
-            <a href="#contact">تماس با ما</a>
-        </div>
+    
+    <header style="text-align:center; padding:40px; background:#f9f9f9; border-bottom:2px solid #ddd; font-family:tahoma;">
+  
+‎  <!-- لوگو -->
+  <img src="rentluxury-logo.png" alt="لوگو رنت لاکچری | Rent Luxury" style="max-width:400px; margin-bottom:20px;">
+  
+‎  <!-- شماره تماس -->
+  <p style="margin-top:20px; font-size:24px; color:#d4af37; font-weight:bold;">
+    📞 09122307010 - 09124253122
+  </p>
+‎ <!-- ✅ منوی همبرگری -->
+  <div class="menu-container">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="menu-content" id="menu">
+      <a href="index.html">خانه</a>
+      <a href="#cars">خودروهای ما</a>
+      <a href="weblog.html">وبلاگ</a>
+      <a href="#contact">تماس با ما</a>
+      <a href="#">🇮🇷 فارسی</a>
+      <a href="#">🇬🇧 English</a>
     </div>
+  </div>
+        
+<header style="
+    padding: 30px 10px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+">
+    <h1 style="
+        font-size: 34px;
+        font-weight: 900;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #fff;
+    ">
+‎        اجاره خودروهای لوکس در تهران با رنت لاکچری
+    </h1>
+
+    <p style="
+        font-size: 19px;
+        line-height: 2;
+        color: #fff;
+        font-weight: 400;
+    ">
+‎        رنت لاکچری با ارائه بهترین خودروهای لوکس، تجربه‌ای بی‌نظیر از اجاره خودرو در تهران و سایر شهرها را به شما هدیه می‌دهد.
+    </p>
+</header>
+
+‎<!-- اسلایدشو ماشین‌ها -->
+<div class="slideshow">
+  <img src="docs/benzE.jpeg" alt="Benz E Class">
+  <img src="bmw5.jpeg" alt="BMW 5 Series">
+  <img src="docs/bmwx4.jpeg" alt="Bmw x4">
+  <img src="Toyota-landcruiser.jpeg" alt="لندکروز">
+  <img src="porschemacan.jpeg" alt="Porsche Macan">
+</div>
+
+    <section id="cars">
+  <h2>خودروهای ما</h2>
+
+  <a class="car" href="benz.html">
+    <img src="docs/benzE.jpeg" alt="اجاره بنز E کلاس در تهران - رنت لاکچری">
+    <p>Mercedes Benz E Class</p>
+  </a>
+
+  <a class="car" href="bmw5.html">
+    <img src="bmw5.jpeg" alt="اجاره بی‌ام‌و سری ۵ در تهران - رنت لاکچری">
+    <p>BMW 5 Series</p>
+  </a>
+
+  <a class="car" href="lexuse.html">
+    <img src="lexuse.jpeg" alt="اجاره لکسوس LX در تهران - رنت لاکچری">
+    <p>Lexus LX</p>
+  </a>
+
+  <a class="car" href="landcruiser.html">
+    <img src="Toyota-landcruiser.jpeg" alt="اجاره تویوتا لندکروز در تهران - رنت لاکچری">
+    <p>Toyota Land Cruiser</p>
+  </a>
+
+  <a class="car" href="chr.html">
+    <img src="chr.jpeg" alt="اجاره تویوتا C-HR در تهران - رنت لاکچری">
+    <p>Toyota CHR</p>
+  </a>
+
+  <a class="car" href="kmc.html">
+    <img src="KMC.jpeg" alt="اجاره کی‌ام‌سی K7 در تهران - رنت لاکچری">
+    <p>KMC K7</p>
+  </a>
+
+  <a class="car" href="bmwx4.html">
+    <img src="docs/bmwx4.jpeg" alt="اجاره بی‌ام‌و X4 در تهران - رنت لاکچری">
+    <p>BMW X4</p>
+  </a>
+
+  <a class="car" href="Xtrim.html">
+  <img src="Xtrim.jpeg" alt="اجاره ایکس‌تریم Xtrim در تهران - رنت لاکچری">
+  <p>Xtrim</p>
+</a>
+
+ <a class="car" href="toyotarav4.html">
+  <img src="toyotarav4.jpeg" alt="اجاره تویوتا RAV4 در تهران - رنت لاکچری">
+  <p>Toyota RAV4</p>
+</a>
+
+ <a class="car" href="porschemacan.html">
+  <img src="porschemacan.jpeg" alt="اجاره پورشه ماکان در تهران - رنت لاکچری">
+  <p>Porsche Macan</p>
+</a>
+
+<!-- BMW 428 -->
+<a class="car" href="bmw428.html">
+  <img src="bmw428.jpeg" alt="اجاره BMW 428 در تهران - رنت لاکچری">
+  <p>BMW 428 | کوپه اسپرت و لوکس مناسب سفرها و مراسم‌ها</p>
+</a>
+
+<a class="car" href="camry2025.html">
+    <img src="camry2025.jpeg" alt="اجاره تویوتا کمری 2025 در تهران - رنت لاکچری">
+    <p>تویوتا کمری 2025</p>
+</a>
+
+<a class="car" href="landcruiser300.html" title="اجاره لندکروزر 300 در تهران">
+  <img src="landcruiser300.jpeg" 
+       alt="اجاره لندکروزر 300 در تهران با قیمت مناسب - رنت لاکچری">
+  <p>اجاره لندکروزر اتاق 300 در تهران | شاسی‌بلند قدرتمند و لوکس</p>
+</a>
+
+   <a class="car-box" href="nissansylphy2025.html">
+    <img src="nissansylphy2025.jpeg" alt="اجاره نیسان سلفی 2025 در تهران" class="car-img">
+    <h3>نیسان سلفی 2025</h3>
+    <p>سدان اقتصادی و کم‌مصرف مناسب سفرهای شهری و بین‌شهری</p>
+</a>
+        
+</section>
+    </section>
+
+‎    <!-- فرم رزرو -->
+    <section style="max-width:600px; margin:60px auto; padding:35px; border:2px solid #d4af37; border-radius:14px; background:#000; font-family:tahoma; color:#fff; font-size:18px;">
+      <h2 style="text-align:center; color:#d4af37; font-size:26px;">🔑 فرم رزرو خودرو</h2>
+      <p style="text-align:center; color:#ccc; font-size:16px;">لطفا اطلاعات خود را وارد کنید تا کارشناسان ما با شما تماس بگیرند.</p>
+      <hr style="border:1px solid #d4af37;"><br>
+
+      <form onsubmit="sendRequest(); return false;">
+        <label>نام و نام خانوادگی:</label><br>
+        <input type="text" id="name" required 
+              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+        <label>شماره تماس:</label><br>
+        <input type="text" id="phone" required 
+              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+        <label>انتخاب خودرو:</label><br>
+        <select id="car" required 
+                style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;">
+          <option value="بنز">بنز</option>
+          <option value="بی‌ام‌و">بی‌ام‌و</option>
+          <option value="سوناتا">سوناتا</option>
+          <option value="لندکروز">لندکروز</option>
+          <option value="تالیسمان">تالیسمان</option>
+        </select><br>
+
+        <label>تاریخ شروع اجاره:</label><br>
+        <input type="date" id="start" required 
+              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+        <label>تاریخ پایان اجاره:</label><br>
+        <input type="date" id="end" required 
+              style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br><br>
+
+        <button type="submit" 
+                style="width:100%; padding:16px; background:#d4af37; color:#000; font-size:20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
+‎          🚗 ارسال درخواست از طریق واتساپ
+        </button>
+      </form>
+
+‎      <!-- پیام تشکر -->
+      <p id="thanksMsg" style="text-align:center; color:#d4af37; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
+‎        ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی با شما تماس می‌گیرند.
+      </p>
+    </section>
 
     <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("show");
+    function sendRequest() {
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let car = document.getElementById("car").value;
+      let start = document.getElementById("start").value;
+      let end = document.getElementById("end").value;
+
+      let message = "سلام، من " + name + 
+‎                    " هستم. شماره تماس: " + phone + 
+‎                    ". می‌خواهم خودرو " + car + 
+‎                    " را از تاریخ " + start + 
+‎                    " تا تاریخ " + end + " رزرو کنم.";
+
+      let url = "https://wa.me/989124253122?text=" + encodeURIComponent(message);
+      window.open(url, "_blank");
+
+‎      // نمایش پیام تشکر
+      document.getElementById("thanksMsg").style.display = "block";
+    }
+    </script>
+
+‎        <!-- فرم تمدید قرارداد -->
+<section style="max-width:600px; margin:40px auto; padding:35px; border:2px solid #d4af37; border-radius:14px; background:#000; color:#fff; font-size:18px;">
+
+  <h2 style="text-align:center; color:#d4af37; font-size:26px;">📝 فرم تمدید قرارداد</h2>
+  <p style="text-align:center; color:#ccc; font-size:16px;">
+‎    اگر قصد تمدید مدت اجاره خودروی خود را دارید، لطفاً اطلاعات زیر را وارد کنید.
+  </p>
+  <hr style="border:1px solid #d4af37;"><br>
+
+  <form onsubmit="sendRenew(); return false;">
+    
+    <label>نام و نام خانوادگی:</label><br>
+    <input type="text" id="renew_name" required 
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <label>شماره تماس:</label><br>
+    <input type="text" id="renew_phone" required 
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <label>نام خودرو:</label><br>
+    <input type="text" id="renew_car" required 
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <label>تمدید تا چه تاریخی؟</label><br>
+    <input type="text" id="renew_end" class="pdate" autocomplete="off" required
+           style="width:100%; padding:12px; margin:8px 0; border:1px solid #d4af37; border-radius:6px; background:#111; color:#fff; font-size:16px;"><br>
+
+    <button type="submit"
+            style="width:100%; padding:16px; background:#d4af37; color:#000; font-size:20px; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
+‎      🔄 ارسال درخواست تمدید از طریق واتساپ
+    </button>
+
+  </form>
+
+  <p id="renewThanks" 
+     style="text-align:center; color:#d4af37; font-weight:bold; margin-top:25px; font-size:18px; display:none;">
+‎    ✅ درخواست تمدید شما با موفقیت ارسال شد.
+  </p>
+
+</section>
+
+<script>
+  function sendRenew() {
+    let name  = document.getElementById("renew_name").value;
+    let phone = document.getElementById("renew_phone").value;
+    let car   = document.getElementById("renew_car").value;
+    let end   = document.getElementById("renew_end").value;
+
+    let msg = "سلام، من " + name +
+‎              " هستم. شماره تماس: " + phone +
+‎              ". می‌خواهم قرارداد اجاره خودرو " + car +
+‎              " را تا تاریخ " + end + " تمدید کنم.";
+
+    let url = "https://wa.me/989124253122?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+
+    document.getElementById("renewThanks").style.display = "block";
+  }
+</script>
+        
+‎    <!-- 📌 بخش مقاله در صفحه اصلی -->
+<section style="margin:50px auto; max-width:900px; padding:20px; border:1px solid #ddd; border-radius:10px; background:#f9f9f9; font-family:tahoma;">
+  <h2 style="text-align:center; color:#333;">موارد مورد نیاز برای اجاره خودرو</h2>
+  <p style="line-height:1.8; text-align:justify; color:#444;">
+‎    برای اجاره خودرو در تهران، لازم است مدارک شناسایی معتبر، گواهینامه رانندگی و در برخی موارد ضمانت‌نامه یا چک به همراه داشته باشید. همچنین شرایط اجاره می‌تواند بر اساس نوع خودرو و مدت زمان اجاره متفاوت باشد...
+  </p>
+  <div style="text-align:center; margin-top:20px;">
+    <a href="blog-requirements_rent-car.html" style="background:#d4af37; color:#fff; padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:bold;">
+‎      ادامه مطلب
+    </a>
+  </div>
+</section>
+    
+    <!-- BEGIN review form -->
+<section style="max-width:700px; margin:30px auto; padding:20px;">
+  <h2 style="text-align:center; color:#000; font-size:26px;">💬 خوشحال می‌شیم نظرتون رو درباره‌ی رنت لاکچری بدونیم!</h2>
+<p style="text-align:center; color:#000; font-size:16px;">نظرتون برای ما خیلی ارزشمنده و کمک می‌کنه خدمات بهتری ارائه بدیم.</p>
+  <form id="reviewForm" style="background:#fff; padding:16px; border-radius:8px;">
+    <label>نام (اختیاری)</label><br>
+    <input id="rv_name" type="text" placeholder="نام شما" style="width:100%; padding:8px; margin:8px 0;"><br>
+
+    <label>شماره تماس (اختیاری)</label><br>
+    <input id="rv_phone" type="text" placeholder="مثال: 0912xxxxxxx" style="width:100%; padding:8px; margin:8px 0;"><br>
+
+    <label>امتیاز</label><br>
+    <select id="rv_rating" style="width:100%; padding:8px; margin:8px 0;">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select><br>
+
+    <label>نظر شما</label><br>
+    <textarea id="rv_review" rows="4" required style="width:100%; padding:8px; margin:8px 0;" placeholder="نظر خود را بنویسید..."></textarea><br>
+
+    <button type="submit" style="padding:10px 16px; background:#d4af37; border:none; border-radius:6px; cursor:pointer;">ارسال نظر</button>
+  </form>
+
+  <p id="rv_msg" style="display:none; color:green; text-align:center; margin-top:8px;">✅ نظر شما ثبت شد و پس از تأیید نمایش داده می‌شود.</p>
+  <p id="rv_err" style="display:none; color:red; text-align:center; margin-top:8px;"></p>
+</section>
+<!-- END review form -->
+
+    <!-- BEGIN comments block -->
+<section class="comments" style="max-width:900px; margin:30px auto; padding:20px;">
+  <h2 style="text-align:center; color:#333; margin-bottom:10px;">نظرات مشتریان</h2>
+  <div id="commentsContainer" style="background:#fff; border-radius:8px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+    <p style="text-align:center; color:#777; padding:20px 0;">در حال بارگذاری نظرات...</p>
+  </div>
+</section>
+
+<style>
+  .comment-item { padding:12px 8px; margin-bottom:10px; border-bottom:1px solid #eee; }
+  .comment-item h4 { margin:0 0 6px 0; font-size:16px; color:#222; }
+  .comment-item p { margin:0 0 8px 0; color:#444; line-height:1.6; }
+  .comment-meta { font-size:12px; color:#888; }
+</style>
+
+<script>
+‎  // آدرس وب اپ Google Apps Script (doGet) — لینک خودت
+  const API_GET = 'https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec';
+
+  function escapeHtml(unsafe) {
+    return String(unsafe || '').replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  async function loadComments() {
+    const container = document.getElementById('commentsContainer');
+    try {
+      const res = await fetch(API_GET); // doGet فقطِ approved=='yes' نظرات را برمی‌گرداند
+      const j = await res.json();
+      if (!j || j.status !== 'ok' || !j.comments.length) {
+        container.innerHTML = '<p style="text-align:center; color:#777; padding:20px 0;">فعلاً نظری تأیید نشده است.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+‎      // مرتب‌سازی بر اساس تاریخ (جدیدترین اول) — اگر timestamp دارید
+      const items = j.comments.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+      items.forEach(c => {
+        const name = escapeHtml(c.name || 'مهمان');
+        const text = escapeHtml(c.review || '');
+        const stamp = escapeHtml(String(c.timestamp || ''));
+        const rating = escapeHtml(String(c.rating || ''));
+
+        const html = `
+          <div class="comment-item">
+            <h4>${name} <span style="font-size:13px; color:#d4af37; margin-right:8px;">${rating}</span></h4>
+            <p>${text}</p>
+            <div class="comment-meta">${stamp}</div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', html);
+      });
+
+    } catch (err) {
+      console.error(err);
+      container.innerHTML = '<p style="text-align:center; color:#c00; padding:20px 0;">خطا در بارگذاری نظرات — دوباره تلاش کن.</p>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadComments);
+</script>
+<!-- END comments block -->
+
+    <div class="discount">
+        <h2>تخفیف ویژه</h2>
+        <p>تخفیف برای رزروهای بالای ۱۰روز!</p>
+    </div>
+</section>
+
+<footer style="background:#222; color:#fff; padding:20px; text-align:center;">
+    <div id="contact">
+  <h2>📍 تماس با ما</h2>
+  <p>برای رزرو خودرو با ما تماس بگیرید:</p>
+
+  <p>
+    <a href="tel:09122307010" style="color:#0f0; text-decoration:none;">📞 09122307010</a> <br>
+    <a href="tel:09124253122" style="color:#0f0; text-decoration:none;">📞 09124253122</a>
+  </p>
+    </div>
+  <p>آدرس: تهران، نیاوران</p>
+
+  <div style="margin-top:10px;">
+    <a href="https://wa.me/989124253122" target="_blank" style="color:#25D366; margin:0 10px;">💬 واتساپ</a>
+    <a href="https://instagram.com/rentluxury.pira" target="_blank" style="color:#E4405F; margin:0 10px;">📷 اینستاگرام</a>
+  </div>
+
+  <p style="margin-top:15px; font-size:14px;">© 2025 Rent Luxury - تمامی حقوق محفوظ است.</p>
+</footer>
+
+<a href="https://wa.me/989124253122" target="_blank" class="whatsapp-float">
+‎  💬 واتساپ
+</a>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  right: 40px; /* فاصله بیشتر از لبه */
+  bottom: 40px;
+  background: #25d366;
+  color: #fff;
+  font-size: 28px;   /* بزرگ‌تر از قبل */
+  font-weight: bold;
+  padding: 22px 32px;  /* حباب درشت‌تر */
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  z-index: 1000;
+  animation: floatBubble 6s ease-in-out infinite; /* انیمیشن کامل */
+}
+
+@keyframes floatBubble {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-50px, -80px); }  /* چپ + بالا */
+  50%  { transform: translate(0, -40px); }      /* کمی بالا */
+  75%  { transform: translate(50px, 60px); }    /* راست + پایین */
+  100% { transform: translate(0, 0); }
+}
+
+.whatsapp-float:hover {
+  background: #128c7e;
+  transform: scale(1.1); /* وقتی روش میره بزرگ‌تر شه */
+}
+</style>
+
+‎<!-- 📌 اسکریپت منوی همبرگری -->
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
+
+‎<!-- 📩 کد ارسال نظرات (بگذار دقیقاً قبل از </body>) -->
+<script>
+(function(){
+  const API_URL = 'https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec';
+  const TOKEN = 'rLx_2025_Auth_9xY7Z';
+  document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('reviewForm');
+    if(!form){ console.error('فرم reviewForm پیدا نشد'); return; }
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const params = new URLSearchParams();
+      params.append('name', document.getElementById('rv_name').value || '');
+      params.append('phone', document.getElementById('rv_phone').value || '');
+      params.append('rating', document.getElementById('rv_rating').value || '');
+      params.append('review', document.getElementById('rv_review').value || '');
+      if (TOKEN) params.append('token', TOKEN);
+
+      try {
+        const resp = await fetch(API_URL, { method:'POST', body: params });
+        console.log('fetch status', resp.status);
+        const text = await resp.text().catch(()=> '');
+        console.log('response text:', text);
+        if (resp.ok) {
+          alert('✅ نظر شما ثبت شد — پس از تأیید نمایش داده می‌شود.');
+          form.reset();
+        } else {
+          alert('خطا در ارسال: ' + resp.status);
         }
-    </script>
-
-    <!-- هدر سایت -->
-    <header style="background:black; padding:30px; text-align:center; color:white;">
-        <img src="logo.png" style="width:120px; margin-bottom:10px;">
-        <h1 style="font-size:32px; color:#d4af37;">اجاره خودروهای لوکس در تهران با رنت لاکچری</h1>
-        <p style="font-size:18px; color:#ccc;">
-            رنت لاکچری با ارائه بهترین خودروهای لوکس، تجربه‌ای بی‌نظیر از اجاره خودرو در تهران و سایر شهرها را به شما هدیه می‌دهد.
-        </p>
-    </header>
-
-    <!-- اسلایدشو -->
-    <div class="slideshow">
-        <img src="cars/1.jpg">
-        <img src="cars/2.jpg">
-        <img src="cars/3.jpg">
-        <img src="cars/4.jpg">
-        <img src="cars/5.jpg">
-    </div>
-
-    <!-- باکس تخفیف 10 درصد -->
-    <section class="discount-box">
-        <h2>🎉 تخفیف ویژه</h2>
-        <p>۱۰٪ تخفیف برای رزروهای بیشتر از ۱۰ روز</p>
-    </section>
-
-    <!-- بخش خودروها -->
-    <section id="cars" style="text-align:center; margin-top:40px;">
-        <h2>خودروها</h2>
-
-        <div class="car-box">
-            <img src="cars/benz.jpg" class="car-img">
-            <p>بنز</p>
-        </div>
-
-        <div class="car-box">
-            <img src="cars/bmw.jpg" class="car-img">
-            <p>بی ام و</p>
-        </div>
-
-        <div class="car-box">
-            <img src="cars/sonata.jpg" class="car-img">
-            <p>سوناتا</p>
-        </div>
-
-        <div class="car-box">
-            <img src="cars/landcruiser.jpg" class="car-img">
-            <p>لندکروز</p>
-        </div>
-
-        <div class="car-box">
-            <img src="cars/talisman.jpg" class="car-img">
-            <p>تالیسمان</p>
-        </div>
-    </section>
-
-    <!-- فرم رزرو -->
-    <section id="reserve" style="margin-top:50px;">
-        <div class="price-box">
-            <h3>فرم رزرو خودرو</h3>
-            <form>
-                <label>نام و نام خانوادگی:</label>
-                <input type="text"><br><br>
-
-                <label>شماره تماس:</label>
-                <input type="text"><br><br>
-
-                <label>تاریخ تحویل:</label>
-                <input id="date1" type="text"><br><br>
-
-                <label>تاریخ بازگشت:</label>
-                <input id="date2" type="text"><br><br>
-
-                <button type="submit">ثبت رزرو</button>
-            </form>
-        </div>
-    </section>
-
-    <script>
-        $(function () {
-            $("#date1").persianDatepicker();
-            $("#date2").persianDatepicker();
-        });
-    </script>
-
-    <!-- فرم تمدید قرارداد -->
-    <section id="extend" style="margin-top:40px;">
-        <div class="price-box">
-            <h3>فرم تمدید قرارداد</h3>
-
-            <form>
-                <label>نام:</label>
-                <input type="text"><br><br>
-
-                <label>شماره قرارداد:</label>
-                <input type="text"><br><br>
-
-                <label>روزهای تمدید:</label>
-                <input type="number"><br><br>
-
-                <button type="submit">تمدید</button>
-            </form>
-
-        </div>
-    </section>
-
-    <!-- شرایط اجاره -->
-    <section id="rules" class="article-content">
-        <h2>شرایط اجاره خودرو</h2>
-        <ul>
-            <li>حداقل سن: ۲۰ سال</li>
-            <li>ارائه مدارک معتبر</li>
-            <li>پرداخت ودیعه</li>
-            <li>رعایت قوانین رانندگی</li>
-        </ul>
-    </section>
-
-    <!-- فرم ثبت نظر -->
-    <section id="review" class="article-content" style="text-align:center;">
-        <h2>ثبت نظر مشتریان</h2>
-
-        <form id="reviewForm">
-            <input id="rv_name" type="text" placeholder="نام"><br><br>
-            <input id="rv_phone" type="text" placeholder="شماره تماس"><br><br>
-            <select id="rv_rating">
-                <option>⭐️⭐️⭐️⭐️⭐️</option>
-                <option>⭐️⭐️⭐️⭐️</option>
-                <option>⭐️⭐️⭐️</option>
-            </select><br><br>
-            <textarea id="rv_review" placeholder="نظر شما"></textarea><br><br>
-
-            <button type="submit">ارسال</button>
-        </form>
-    </section>
-
-    <!-- اسکریپت ارسال نظرات -->
-    <script>
-        (function () {
-            const API_URL = 'https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec';
-            const TOKEN = 'rLx_2025_Auth_9xY7Z';
-
-            document.addEventListener('DOMContentLoaded', function () {
-                const form = document.getElementById('reviewForm');
-                if (!form) return;
-
-                form.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    const params = new URLSearchParams();
-                    params.append('name', rv_name.value);
-                    params.append('phone', rv_phone.value);
-                    params.append('rating', rv_rating.value);
-                    params.append('review', rv_review.value);
-                    params.append('token', TOKEN);
-
-                    const resp = await fetch(API_URL, { method: 'POST', body: params });
-                    if (resp.ok) {
-                        alert("نظر شما ثبت شد.");
-                        form.reset();
-                    }
-                });
-            });
-        })();
-    </script>
-
-    <!-- تماس با ما -->
-    <section id="contact" class="contact-section">
-        <h2>تماس با ما</h2>
-
-        <div class="contact-items">
-            <p>📞 واتساپ: 
-                <a href="https://wa.me/989124253122" target="_blank">09124253122</a>
-            </p>
-
-            <p>📸 اینستاگرام:
-                <a href="https://instagram.com/rentluxury.pira" target="_blank">@rentluxury.pira</a>
-            </p>
-        </div>
-    </section>
+      } catch (err) {
+        console.error('خطا در fetch:', err);
+        alert('خطا در ارتباط با سرور — کنسول را چک کن.');
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
