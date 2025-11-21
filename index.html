@@ -274,11 +274,68 @@
     }
     </script>
 
-    <div class="comments">
-        <h2>نظرات مشتریان</h2>
-        <p>مشتری ۱: عالی بود، ماشین تمیز و سرویس خوب!</p>
-        <p>مشتری ۲: تجربه خوبی داشتم، تشکر میکنم از تیم رنت لاکچری بابت این تجربه خوب .</p>
-    </div>
+    <!-- BEGIN comments block -->
+<section class="comments" style="max-width:900px; margin:30px auto; padding:20px;">
+  <h2 style="text-align:center; color:#333; margin-bottom:10px;">نظرات مشتریان</h2>
+  <div id="commentsContainer" style="background:#fff; border-radius:8px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+    <p style="text-align:center; color:#777; padding:20px 0;">در حال بارگذاری نظرات...</p>
+  </div>
+</section>
+
+<style>
+  .comment-item { padding:12px 8px; margin-bottom:10px; border-bottom:1px solid #eee; }
+  .comment-item h4 { margin:0 0 6px 0; font-size:16px; color:#222; }
+  .comment-item p { margin:0 0 8px 0; color:#444; line-height:1.6; }
+  .comment-meta { font-size:12px; color:#888; }
+</style>
+
+<script>
+  // آدرس وب اپ Google Apps Script (doGet) — لینک خودت
+  const API_GET = 'https://script.google.com/macros/s/AKfycby4NihTM-lMYHJCyKVgz5a7pN3s-YyS8uk5kDXyUCbzEiA15sLbhlKkw1GAQJp2ZN65Vw/exec';
+
+  function escapeHtml(unsafe) {
+    return String(unsafe || '').replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  async function loadComments() {
+    const container = document.getElementById('commentsContainer');
+    try {
+      const res = await fetch(API_GET); // doGet فقطِ approved=='yes' نظرات را برمی‌گرداند
+      const j = await res.json();
+      if (!j || j.status !== 'ok' || !j.comments.length) {
+        container.innerHTML = '<p style="text-align:center; color:#777; padding:20px 0;">فعلاً نظری تأیید نشده است.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+      // مرتب‌سازی بر اساس تاریخ (جدیدترین اول) — اگر timestamp دارید
+      const items = j.comments.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+      items.forEach(c => {
+        const name = escapeHtml(c.name || 'مهمان');
+        const text = escapeHtml(c.review || '');
+        const stamp = escapeHtml(String(c.timestamp || ''));
+        const rating = escapeHtml(String(c.rating || ''));
+
+        const html = `
+          <div class="comment-item">
+            <h4>${name} <span style="font-size:13px; color:#d4af37; margin-right:8px;">${rating}</span></h4>
+            <p>${text}</p>
+            <div class="comment-meta">${stamp}</div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', html);
+      });
+
+    } catch (err) {
+      console.error(err);
+      container.innerHTML = '<p style="text-align:center; color:#c00; padding:20px 0;">خطا در بارگذاری نظرات — دوباره تلاش کن.</p>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadComments);
+</script>
+<!-- END comments block -->
 
     <div class="discount">
         <h2>تخفیف ویژه</h2>
