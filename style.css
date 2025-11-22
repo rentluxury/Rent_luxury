@@ -3,11 +3,7 @@
 ‎/* ====== عمومی ====== */
 body{font-family:Tahoma, Arial, sans-serif;background:#f4f4f4;color:#333;margin:0;padding:0}
 
-‎/* ====== معرفی / اسلایدشو ====== */
-‎/* اگر در HTML از .intro و .intro-text و .slides استفاده می‌کنی، آنها را نگه دار.
-‎   اگر نه، کافیست همین .slideshow برای نمایش تصاویر اسلایدی باشد. */
-.intro{position:relative;width:100%;height:400px;overflow:hidden;color:#fff;text-align:center}
-
+‎
 ‎/* اسلایدشو (ادغام شده) */
 .slideshow {
   width: 100%;
@@ -44,6 +40,7 @@ body{font-family:Tahoma, Arial, sans-serif;background:#f4f4f4;color:#333;margin:
   35%  { opacity: 0; }
   100% { opacity: 0; }
 }
+  
 
 ‎/* ==== كارت خودرو ==== */
 .car-card img,
