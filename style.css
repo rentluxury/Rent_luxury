@@ -1,204 +1,252 @@
-استایل css
-
-‎/* ====== عمومی ====== */
-body{font-family:Tahoma, Arial, sans-serif;background:#f4f4f4;color:#333;margin:0;padding:0}
-
-‎
-‎/* اسلایدشو (ادغام شده) */
-.slideshow {
-  width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16 / 9;
-  margin: 40px auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* تنظیمات عمومی */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    direction: rtl;
 }
 
-.slideshow img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: slide 20s infinite;
-  opacity: 0;
+h1, h2 {
+    margin: 0;
 }
 
-.slideshow img:nth-child(1) { animation-delay: 0s; }
-.slideshow img:nth-child(2) { animation-delay: 4s; }
-.slideshow img:nth-child(3) { animation-delay: 8s; }
-.slideshow img:nth-child(4) { animation-delay: 12s; }
-.slideshow img:nth-child(5) { animation-delay: 16s; }
-
-@keyframes slide {
-  0%   { opacity: 0; }
-  10%  { opacity: 1; }
-  25%  { opacity: 1; }
-  35%  { opacity: 0; }
-  100% { opacity: 0; }
+a {
+    text-decoration: none;
+    color: inherit;
 }
-  
 
-‎/* ==== كارت خودرو ==== */
-.car-card img,
-a.car img,
-.car-img {
-  width: 100%;
-  height: 250px; /* ارتفاع ثابت برای همه */
-  object-fit: cover; /* برش خودکار برای هماهنگی */
-  border-radius: 10px;
+/* --- هدر --- */
+.header {
+    background: #000;
+    color: #fff;
+    padding: 15px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
-.car-box {
-    width: 48%;
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.header-text {
+    text-align: center;
+    flex: 1;
+}
+
+.header-text h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.phone {
+    font-size: 14px;
+}
+
+/* منوی همبرگری */
+.hamburger {
+    font-size: 32px;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+    display: block;
+}
+
+.menu {
+    display: none;
+    list-style: none;
+    background: #111;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 180px;
+}
+
+.menu li {
+    border-bottom: 1px solid #333;
+}
+
+.menu li a {
+    color: #fff;
+    display: block;
+    padding: 12px;
+}
+
+.menu li a:hover {
+    background: #222;
+}
+
+/* بخش معرفی */
+.intro {
+    margin-top: 130px;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    font-size: 18px;
+    line-height: 2;
+}
+
+/* --- اسلایدشو --- */
+.slideshow-container {
+    width: 100%;
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.fade {
+    animation: fadeEffect 1.5s ease;
+}
+
+@keyframes fadeEffect {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background: #bbb;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.active {
+    background: #333;
+}
+
+/* --- لیست خودروها --- */
+.cars-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.cars-section h2 {
+    margin-bottom: 20px;
+}
+
+.cars {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.car {
     background: #fff;
     border-radius: 10px;
     padding: 10px;
-    margin: 10px 1%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
+    transition: 0.3s;
 }
 
-.car-img {
+.car img {
     width: 100%;
-    height: 250px;
+    height: 120px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-‎/* ====== منوی همبرگری ====== */
-.menu-container{
-  position:absolute;
-  top:20px;
-  right:20px;
-  z-index:1000;
-}
-.menu-btn{
-  font-size:60px;      /* اندازه آیکون */
-  cursor:pointer;
-  background:#000;
-  color:#fff;
-  padding:10px 15px;
-  border-radius:6px;
-  border:none;
-}
-.menu-content{
-  display:none;
-  position:absolute;
-  top:70px;
-  right:0;
-  background:#fff;
-  border:1px solid #ddd;
-  border-radius:6px;
-  padding:10px;
-  text-align:right;
-  min-width:220px;    /* پهنای پایه */
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-}
-.menu-content.show{display:block}
-.menu-content a{
-  display:block;
-  padding:14px 18px;
-  font-size:22px;     /* اندازه متن لینک‌ها */
-  font-family:Tahoma, Arial, sans-serif;
-  color:#000;
-  text-decoration:none;
-  font-weight:600;
-}
-.menu-content a:hover{background:#f1f1f1}
-
-‎/* ====== نمای خلاصه مقاله در صفحه اصلی ====== */
-.article-preview{
-  font-size:20px;
-  line-height:1.8;
-  color:#333;
-  text-align:justify;
-  margin:20px auto;
-  max-width:800px;
-}
-.read-more{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 24px;
-  font-size:18px;
-  font-weight:bold;
-  color:#fff;
-  background:#d4af37;
-  border-radius:8px;
-  text-decoration:none;
-  transition:0.2s;
-}
-.read-more:hover{background:#b48a2c}
-
-‎/* ====== هدر وبلاگ ====== */
-.blog-header{background:#000;padding:20px;text-align:center;font-family:Tahoma,Arial,sans-serif}
-.blog-header h1{margin:0;font-size:28px;color:#d4af37}
-
-‎/* ====== محتوا/مقاله ====== */
-.article-content{
-  max-width:900px;
-  margin:30px auto;
-  background:#fff;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 0 10px rgba(0,0,0,0.06);
-  line-height:1.8;
-  color:#333;
-}
-.article-content h1, .article-content h2{color:#222}
-.article-content h1{text-align:center}
-.article-content p{text-align:justify}
-
-‎/* لیست‌ها و تیترها راست‌چین برای متن فارسی */
-.article-content ol,
-.article-content ul{
-  direction:rtl;
-  text-align:right;
-  padding-right:20px;
-  margin:12px 0;
-}
-.article-content h2{
-  direction:rtl;
-  text-align:right;
+.car:hover {
+    box-shadow: 0 0 10px #aaa;
 }
 
-‎/* دکمه بازگشت */
-.back-btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:10px 20px;
-  background:#d4af37;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
+/* تخفیف */
+.discount {
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.price-box {
-  background: #000;              /* پس‌زمینه مشکی برای هماهنگی با سایت */
-  color: #fff;                   /* نوشته سفید */
-  border: 3px solid #d4af37;     /* کادر طلایی پررنگ‌تر */
-  border-radius: 12px;
-  padding: 25px;
-  max-width: 420px;
-  margin: 40px auto;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* درخشش طلایی ملایم دور کادر */
+/* --- فرم‌ها --- */
+.form-box {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
 }
 
-.price-box h3 {
-  color: #d4af37;
-  margin-bottom: 10px;
-  font-size: 22px;
-  font-weight: bold;
+.form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.price-box .note {
-  color: #ccc;
-  font-size: 15px;
-  line-height: 1.7;
+.form-box input,
+.form-box select,
+.form-box textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-box button {
+    padding: 12px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* شرایط */
+.rules {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+.rules ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* فوتر */
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* ریسپانسیو */
+@media(max-width: 768px) {
+    .header-content {
+        flex-direction: row;
+    }
+
+    .header-text {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
 }
