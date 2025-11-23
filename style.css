@@ -100,7 +100,7 @@ a {
 }
 
 /* --- اسلایدشو --- */
-.slideshow-container {
+.slideshow {
     width: 100%;
     max-height: 400px;
     position: relative;
