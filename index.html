@@ -174,29 +174,32 @@
 <section id="reserve" class="form-box">
     <h2>فرم رزرو خودرو</h2>
 
-    <form>
+    <form onsubmit="sendToWhatsApp(event)">
+        
         <label>نام و نام خانوادگی</label>
-        <input type="text">
+        <input type="text" id="fullname" required>
 
         <label>انتخاب خودرو</label>
-        <select>
+        <select id="car" required>
             <option>Mercedes Benz E Class</option>
             <option>BMW 5 Series</option>
             <option>Lexus LX</option>
             <option>Land Cruiser</option>
-            <!-- ... -->
+            <option>BMW X4</option>
+            <option>Porsche Macan</option>
         </select>
 
         <label>تاریخ تحویل</label>
-        <input type="text" id="date1" placeholder="انتخاب تاریخ">
+        <input type="text" id="date1" placeholder="انتخاب تاریخ" required>
 
         <label>تاریخ بازگشت</label>
-        <input type="text" id="date2" placeholder="انتخاب تاریخ">
+        <input type="text" id="date2" placeholder="انتخاب تاریخ" required>
 
         <label>شماره تماس</label>
-        <input type="text">
+        <input type="text" id="phone" required>
 
-        <button>ثبت رزرو</button>
+        <button type="submit">ثبت رزرو</button>
+
     </form>
 </section>
 
