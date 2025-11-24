@@ -203,17 +203,30 @@
     </form>
 </section>
 
-<!-- فرم تمدید -->
+<!-- فرم تمدید قرارداد -->
 <section id="extend" class="form-box">
     <h2>فرم تمدید قرارداد</h2>
-    <form>
-        <label>نام</label>
-        <input type="text">
-        <label>شماره قرارداد</label>
-        <input type="text">
-        <label>تاریخ جدید تحویل</label>
-        <input type="text" id="extend-date">
-        <button>ثبت</button>
+    <p>در صورت نیاز به تمدید مدت قرارداد، اطلاعات زیر را وارد کنید.</p>
+
+    <form onsubmit="sendExtendToWhatsApp(event)">
+
+        <label>نام و نام خانوادگی</label>
+        <input type="text" id="extend-fullname" required>
+
+        <label>خودرو</label>
+        <input type="text" id="extend-car" placeholder="مثلاً: BMW X4" required>
+
+        <label>تاریخ پایان قبلی</label>
+        <input type="text" id="extend-date-old" placeholder="انتخاب تاریخ" required>
+
+        <label>تاریخ جدید قرارداد</label>
+        <input type="text" id="extend-date-new" placeholder="انتخاب تاریخ" required>
+
+        <label>شماره تماس</label>
+        <input type="text" id="extend-phone" required>
+
+        <button type="submit">ارسال درخواست تمدید</button>
+
     </form>
 </section>
 
