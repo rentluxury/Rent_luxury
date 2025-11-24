@@ -77,15 +77,15 @@ function sendToWhatsApp(event) {
 
 /* فعال‌سازی تقویم شمسی برای فرم تمدید */
 document.addEventListener("DOMContentLoaded", function () {
-    if (typeof $ === "function") {
+    $(function() {
         $("#extend-date-old").persianDatepicker({
-            format: "YYYY/MM/DD",
+            format: "YYYY/MM/DD"
         });
 
         $("#extend-date-new").persianDatepicker({
-            format: "YYYY/MM/DD",
+            format: "YYYY/MM/DD"
         });
-    }
+    });
 });
 
 /* ارسال فرم تمدید به واتساپ */
