@@ -35,19 +35,22 @@ function showSlides() {
 }
 
 
-/* ============================
-   تقویم شمسی
-============================ */
-document.addEventListener("DOMContentLoaded", function () {
-    if (typeof persianDatepicker === "function") {
-        $("#date1").persianDatepicker();
-        $("#date2").persianDatepicker();
-        $("#extend-date").persianDatepicker();
-    }
+// ===================
+// فعال‌سازی تقویم شمسی
+// ===================
+$(document).ready(function () {
+    $("#date1").persianDatepicker({
+        format: "YYYY/MM/DD"
+    });
+
+    $("#date2").persianDatepicker({
+        format: "YYYY/MM/DD"
+    });
 });
 
-رزرو واتساپ
-<script>
+// ===================
+// ارسال به واتساپ
+// ===================
 function sendToWhatsApp(event) {
     event.preventDefault();
 
@@ -58,18 +61,15 @@ function sendToWhatsApp(event) {
     let phone = document.getElementById("phone").value;
 
     let message = 
-        "رزرو خودرو:%0A" +
-        "نام: " + name + "%0A" +
-        "خودرو انتخابی: " + car + "%0A" +
-        "تاریخ تحویل: " + date1 + "%0A" +
-        "تاریخ بازگشت: " + date2 + "%0A" +
-        "شماره تماس مشتری: " + phone;
+`رزرو خودرو:
+نام: ${name}
+خودرو انتخابی: ${car}
+تاریخ تحویل: ${date1}
+تاریخ بازگشت: ${date2}
+شماره تماس مشتری: ${phone}`;
 
-    // شماره واتساپ اصلی شما:
-    let whatsappNumber = "989124253122";
-
-    let url = "https://wa.me/" + whatsappNumber + "?text=" + message;
+    let url =
+        "https://wa.me/989124253122?text=" + encodeURIComponent(message);
 
     window.open(url, "_blank");
 }
-</script>
