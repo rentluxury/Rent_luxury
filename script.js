@@ -74,3 +74,42 @@ function sendToWhatsApp(event) {
 
     window.open(url, "_blank");
 }
+
+/* فعال‌سازی تقویم شمسی برای فرم تمدید */
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof $ === "function") {
+        $("#extend-date-old").persianDatepicker({
+            format: "YYYY/MM/DD",
+        });
+
+        $("#extend-date-new").persianDatepicker({
+            format: "YYYY/MM/DD",
+        });
+    }
+});
+
+/* ارسال فرم تمدید به واتساپ */
+function sendExtendToWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("extend-fullname").value;
+    let car = document.getElementById("extend-car").value;
+    let oldDate = document.getElementById("extend-date-old").value;
+    let newDate = document.getElementById("extend-date-new").value;
+    let phone = document.getElementById("extend-phone").value;
+
+    let message =
+        "درخواست تمدید قرارداد:%0A" +
+        "نام مشتری: " + name + "%0A" +
+        "خودرو: " + car + "%0A" +
+        "تاریخ پایان قبلی: " + oldDate + "%0A" +
+        "تاریخ جدید قرارداد: " + newDate + "%0A" +
+        "شماره تماس: " + phone;
+
+    // شماره واتساپ
+    let whatsapp = "989124253122";
+
+    let url = "https://wa.me/" + whatsapp + "?text=" + message;
+
+    window.open(url, "_blank");
+}
