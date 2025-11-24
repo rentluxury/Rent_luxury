@@ -45,3 +45,31 @@ document.addEventListener("DOMContentLoaded", function () {
         $("#extend-date").persianDatepicker();
     }
 });
+
+رزرو واتساپ
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("fullname").value;
+    let car = document.getElementById("car").value;
+    let date1 = document.getElementById("date1").value;
+    let date2 = document.getElementById("date2").value;
+    let phone = document.getElementById("phone").value;
+
+    let message = 
+        "رزرو خودرو:%0A" +
+        "نام: " + name + "%0A" +
+        "خودرو انتخابی: " + car + "%0A" +
+        "تاریخ تحویل: " + date1 + "%0A" +
+        "تاریخ بازگشت: " + date2 + "%0A" +
+        "شماره تماس مشتری: " + phone;
+
+    // شماره واتساپ اصلی شما:
+    let whatsappNumber = "989124253122";
+
+    let url = "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+    window.open(url, "_blank");
+}
+</script>
