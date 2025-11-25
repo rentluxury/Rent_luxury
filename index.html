@@ -230,46 +230,63 @@
     </form>
 </section>
 
-<!-- 🔶 بخش نظرسنجی مشتریان -->
-<section id="reviews-section" style="margin-top: 80px;">
-    <h2 style="text-align:center; margin-bottom:10px;">نظرسنجی مشتریان</h2>
-    <p style="text-align:center; max-width:600px; margin:0 auto 30px; font-size:17px; line-height:1.8;">
-        نظرتون برامون خیلی ارزشمند و باعث پیشرفت مجموعه میشه 🌟  
-        با ثبت نظر، شما از <strong>رنت لاکچری</strong> حمایت می‌کنید.
+<!-- بخش نظر سنجی مشتریان -->
+<section id="review-section" style="margin-top: 40px;">
+
+    <h2 style="text-align:center; font-size:28px; margin-bottom:10px;">
+        ★ نظرتون برای ما خیلی ارزشمنده ★
+    </h2>
+
+    <p style="text-align:center; font-size:18px; margin-bottom:25px;">
+        با ثبت نظرتون بهمون کمک می‌کنید خدمات بهتری ارائه بدیم ❤️  
+        نظر شما بعد از تأیید نمایش داده می‌شه.
     </p>
 
-    <!-- فرم نظر -->
-    <form id="review-form" style="max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:15px;">
+    <form id="reviewForm" style="
+        max-width:600px;
+        margin:auto; 
+        background:#ffffff; 
+        padding:25px; 
+        border-radius:12px; 
+        box-shadow:0 0 12px rgba(0,0,0,0.1);
+    ">
 
-        <input type="text" name="name" placeholder="نام شما" required 
-               style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+        <label>نام کامل:</label>
+        <input type="text" name="name" required 
+               style="width:100%; padding:10px; margin-bottom:15px;">
 
-        <select name="rating" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-            <option value="">امتیاز</option>
-            <option value="5">⭐⭐⭐⭐⭐ عالی</option>
-            <option value="4">⭐⭐⭐⭐ خوب</option>
-            <option value="3">⭐⭐⭐ معمولی</option>
-            <option value="2">⭐⭐ ضعیف</option>
-            <option value="1">⭐ خیلی بد</option>
+        <label>امتیاز (۱ تا ۵):</label>
+        <select name="rating" required 
+                style="width:100%; padding:10px; margin-bottom:15px;">
+            <option value="">انتخاب کنید</option>
+            <option value="5">★★★★★ (عالی)</option>
+            <option value="4">★★★★☆</option>
+            <option value="3">★★★☆☆</option>
+            <option value="2">★★☆☆☆</option>
+            <option value="1">★☆☆☆☆ (ضعیف)</option>
         </select>
 
-        <textarea name="comment" rows="5" placeholder="متن نظر شما..." required
-                  style="padding:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
+        <label>نظر شما:</label>
+        <textarea name="comment" required rows="4"
+                  style="width:100%; padding:10px; margin-bottom:15px;"></textarea>
 
-        <button type="submit" 
-                style="padding:14px; border:none; background:#000; color:white; border-radius:8px; font-size:17px; cursor:pointer;">
+        <button type="submit" style="
+            width:100%; padding:12px; 
+            background:#ff6600; 
+            color:white; 
+            font-size:18px;
+            border:none; border-radius:8px; cursor:pointer;">
             ارسال نظر
         </button>
-
-        <p id="form-message" style="text-align:center; display:none;"></p>
     </form>
 
-    <hr style="margin:50px auto; width:60%;">
+    <p id="reviewMessage" style="text-align:center; margin-top:15px; font-size:18px;"></p>
 
-    <!-- بخش نمایش نظرات تأیید شده -->
-    <h3 style="text-align:center;">نظرات ثبت‌شده مشتریان</h3>
-    <div id="approved-reviews" style="max-width:700px; margin:30px auto 80px; display:flex; flex-direction:column; gap:20px;">
-    </div>
+    <hr style="margin:40px auto; width:60%;">
+
+    <h3 style="text-align:center; font-size:26px;">نظرات تأیید شده مشتریان</h3>
+    <div id="approvedReviews" style="max-width:700px; margin:30px auto;"></div>
+
 </section>
 
 
