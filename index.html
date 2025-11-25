@@ -231,63 +231,52 @@
 </section>
 
 <!-- بخش نظر سنجی مشتریان -->
-<section id="review-section" style="margin-top: 40px;">
+<!-- BEGIN review form -->
+<section style="max-width:700px; margin:30px auto; padding:20px;">
+  <h2 style="text-align:center; color:#000; font-size:26px;">💬 خوشحال می‌شیم نظرتون رو درباره‌ی رنت لاکچری بدونیم!</h2>
+  <p style="text-align:center; color:#000; font-size:16px;">نظرتون برای ما خیلی ارزشمنده و کمک می‌کنه خدمات بهتری ارائه بدیم.</p>
+  
+  <form id="reviewForm" style="background:#fff; padding:16px; border-radius:8px;">
+    <label>نام (اختیاری)</label><br>
+    <input id="rv_name" name="name" type="text" placeholder="نام شما" style="width:100%; padding:8px; margin:8px 0;"><br>
 
-    <h2 style="text-align:center; font-size:28px; margin-bottom:10px;">
-        ★ نظرتون برای ما خیلی ارزشمنده ★
-    </h2>
+    <label>شماره تماس (اختیاری)</label><br>
+    <input id="rv_phone" name="phone" type="text" placeholder="مثال: 0912xxxxxxx" style="width:100%; padding:8px; margin:8px 0;"><br>
 
-    <p style="text-align:center; font-size:18px; margin-bottom:25px;">
-        با ثبت نظرتون بهمون کمک می‌کنید خدمات بهتری ارائه بدیم ❤️  
-        نظر شما بعد از تأیید نمایش داده می‌شه.
-    </p>
+    <label>امتیاز</label><br>
+    <select id="rv_rating" name="rating" style="width:100%; padding:8px; margin:8px 0;">
+      <option value="5">5</option>
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+    </select><br>
 
-    <form id="reviewForm" style="
-        max-width:600px;
-        margin:auto; 
-        background:#ffffff; 
-        padding:25px; 
-        border-radius:12px; 
-        box-shadow:0 0 12px rgba(0,0,0,0.1);
-    ">
+    <label>نظر شما</label><br>
+    <textarea id="rv_review" name="comment" rows="4" required style="width:100%; padding:8px; margin:8px 0;" placeholder="نظر خود را بنویسید..."></textarea><br>
 
-        <label>نام کامل:</label>
-        <input type="text" name="name" required 
-               style="width:100%; padding:10px; margin-bottom:15px;">
+    <button type="submit" style="padding:10px 16px; background:#000; color:#fff; border:none; border-radius:6px; cursor:pointer;">ارسال نظر</button>
+  </form>
 
-        <label>امتیاز (۱ تا ۵):</label>
-        <select name="rating" required 
-                style="width:100%; padding:10px; margin-bottom:15px;">
-            <option value="">انتخاب کنید</option>
-            <option value="5">★★★★★ (عالی)</option>
-            <option value="4">★★★★☆</option>
-            <option value="3">★★★☆☆</option>
-            <option value="2">★★☆☆☆</option>
-            <option value="1">★☆☆☆☆ (ضعیف)</option>
-        </select>
-
-        <label>نظر شما:</label>
-        <textarea name="comment" required rows="4"
-                  style="width:100%; padding:10px; margin-bottom:15px;"></textarea>
-
-        <button type="submit" style="
-            width:100%; padding:12px; 
-            background:#000; 
-            color:white; 
-            font-size:18px;
-            border:none; border-radius:8px; cursor:pointer;">
-            ارسال نظر
-        </button>
-    </form>
-
-    <p id="reviewMessage" style="text-align:center; margin-top:15px; font-size:18px;"></p>
-
-    <hr style="margin:40px auto; width:60%;">
-
-    <h3 style="text-align:center; font-size:26px;">نظرات تأیید شده مشتریان</h3>
-    <div id="approvedReviews" style="max-width:700px; margin:30px auto;"></div>
-
+  <p id="rv_msg" style="display:none; color:green; text-align:center; margin-top:8px;">✅ نظر شما ثبت شد و پس از تأیید نمایش داده می‌شود.</p>
+  <p id="rv_err" style="display:none; color:red; text-align:center; margin-top:8px;"></p>
 </section>
+<!-- END review form -->
+
+<!-- BEGIN comments block -->
+<section class="comments" style="max-width:900px; margin:30px auto; padding:20px;">
+  <h2 style="text-align:center; color:#333; margin-bottom:10px;">نظرات مشتریان</h2>
+  <div id="commentsContainer" style="background:#fff; border-radius:8px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+    <p style="text-align:center; color:#777; padding:20px 0;">در حال بارگذاری نظرات...</p>
+  </div>
+</section>
+
+<style>
+  .comment-item { padding:12px 8px; margin-bottom:10px; border-bottom:1px solid #eee; }
+  .comment-item h4 { margin:0 0 6px 0; font-size:16px; color:#222; }
+  .comment-item p { margin:0 0 8px 0; color:#444; line-height:1.6; }
+  .comment-meta { font-size:12px; color:#888; }
+</style>
 
 
 <!-- شرایط اجاره -->
