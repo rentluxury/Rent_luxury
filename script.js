@@ -114,7 +114,7 @@ function sendExtendToWhatsApp(event) {
     window.open(url, "_blank");
 }
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycby4NihTM-lMYHJCyKVgz5a7pN3s-YyS8uk5kDXyUCbzEiA15sLbhlKkw1GAQJp2ZN65Vw/exec";
 
 // ارسال نظر به گوگل شیت
 document.getElementById("reviewForm").addEventListener("submit", function(e) {
