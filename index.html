@@ -230,17 +230,48 @@
     </form>
 </section>
 
-<!-- فرم نظرسنجی -->
-<section id="review" class="form-box">
-    <h2>فرم نظرسنجی</h2>
-    <form>
-        <label>نام</label>
-        <input type="text">
-        <label>نظر شما</label>
-        <textarea></textarea>
-        <button>ارسال</button>
+<!-- 🔶 بخش نظرسنجی مشتریان -->
+<section id="reviews-section" style="margin-top: 80px;">
+    <h2 style="text-align:center; margin-bottom:10px;">نظرسنجی مشتریان</h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto 30px; font-size:17px; line-height:1.8;">
+        نظرتون برامون خیلی ارزشمند و باعث پیشرفت مجموعه میشه 🌟  
+        با ثبت نظر، شما از <strong>رنت لاکچری</strong> حمایت می‌کنید.
+    </p>
+
+    <!-- فرم نظر -->
+    <form id="review-form" style="max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:15px;">
+
+        <input type="text" name="name" placeholder="نام شما" required 
+               style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+
+        <select name="rating" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+            <option value="">امتیاز</option>
+            <option value="5">⭐⭐⭐⭐⭐ عالی</option>
+            <option value="4">⭐⭐⭐⭐ خوب</option>
+            <option value="3">⭐⭐⭐ معمولی</option>
+            <option value="2">⭐⭐ ضعیف</option>
+            <option value="1">⭐ خیلی بد</option>
+        </select>
+
+        <textarea name="comment" rows="5" placeholder="متن نظر شما..." required
+                  style="padding:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
+
+        <button type="submit" 
+                style="padding:14px; border:none; background:#000; color:white; border-radius:8px; font-size:17px; cursor:pointer;">
+            ارسال نظر
+        </button>
+
+        <p id="form-message" style="text-align:center; display:none;"></p>
     </form>
+
+    <hr style="margin:50px auto; width:60%;">
+
+    <!-- بخش نمایش نظرات تأیید شده -->
+    <h3 style="text-align:center;">نظرات ثبت‌شده مشتریان</h3>
+    <div id="approved-reviews" style="max-width:700px; margin:30px auto 80px; display:flex; flex-direction:column; gap:20px;">
+    </div>
 </section>
+
 
 <!-- شرایط اجاره -->
 <section id="rules" class="rules">
