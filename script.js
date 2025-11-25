@@ -114,64 +114,54 @@ function sendExtendToWhatsApp(event) {
     window.open(url, "_blank");
 }
 
-// لینک وب‌اپ Google Script
-const scriptURL =https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec
+const scriptURL = "https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec";
 
-// -------------------------
 // ارسال نظر به گوگل شیت
-// -------------------------
-const form = document.getElementById("review-form");
-const messageDiv = document.getElementById("form-message");
-
-form.addEventListener("submit", function (e) {
+document.getElementById("reviewForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const formData = new FormData(form);
+    let formData = new FormData(this);
 
     fetch(scriptURL, { method: "POST", body: formData })
-        .then(res => res.json())
-        .then(data => {
-            messageDiv.style.display = "block";
-            messageDiv.style.color = "green";
-            messageDiv.textContent = "نظر شما با موفقیت ثبت شد؛ پس از تأیید نمایش داده می‌شود 🌟";
-            form.reset();
+        .then(res => res.text())
+        .then(() => {
+            document.getElementById("reviewMessage").innerHTML =
+                "✔ نظر شما با موفقیت ارسال شد. پس از تایید نمایش داده می‌شود ❤️";
+            this.reset();
         })
         .catch(err => {
-            messageDiv.style.display = "block";
-            messageDiv.style.color = "red";
-            messageDiv.textContent = "خطا در ثبت نظر، لطفاً دوباره امتحان کنید.";
+            document.getElementById("reviewMessage").innerHTML =
+                "❌ خطا در ارسال نظر! لطفا دوباره تلاش کنید.";
         });
 });
 
-// -------------------------
-// لود نظرات تأیید شده
-// -------------------------
+// دریافت و نمایش نظرات تایید شده
 function loadApprovedReviews() {
     fetch(scriptURL)
-        .then(response => response.json())
-        .then(reviews => {
-            const container = document.getElementById("approved-reviews");
+        .then(res => res.json())
+        .then(data => {
+            let container = document.getElementById("approvedReviews");
             container.innerHTML = "";
 
-            reviews.forEach(r => {
-                // فقط نظرات تایید شده
-                if (r.approved === "true") {
-                    const div = document.createElement("div");
-                    div.style.padding = "18px";
-                    div.style.border = "1px solid #ddd";
-                    div.style.borderRadius = "8px";
-                    div.style.background = "#fafafa";
-
-                    div.innerHTML = `
-                        <strong>${r.name}</strong> - ⭐ ${r.rating}<br>
-                        <p style="margin-top:8px;">${r.comment}</p>
-                        <small style="color:#888;">${r.timestamp}</small>
+            data.forEach(item => {
+                if (item.approved === "true") {
+                    container.innerHTML += `
+                        <div style="
+                            background:#fff;
+                            padding:15px;
+                            margin-bottom:15px;
+                            border-radius:10px;
+                            box-shadow:0 0 8px rgba(0,0,0,0.1);
+                        ">
+                            <strong>${item.name}</strong>
+                            <span style="color:gold; font-size:20px;">${"★".repeat(item.rating)}</span>
+                            <p>${item.comment}</p>
+                        </div>
                     `;
-
-                    container.appendChild(div);
                 }
             });
         });
 }
 
-document.addEventListener("DOMContentLoaded", loadApprovedReviews);
+// هنگام لود صفحه نظرات تایید شده نمایش داده شود
+loadApprovedReviews();
