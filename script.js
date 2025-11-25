@@ -115,7 +115,7 @@ function sendExtendToWhatsApp(event) {
 }
 
 // لینک Web App جدید Google Apps Script
-const API_URL = 'https://script.google.com/macros/s/AKfycbxGaI2pInnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3IIl-1mAXWcTmw/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbxGal2plnnNwH67d8c7qWrThab_bPHHvW6SZwGM0_XGdUHo62yy77VF3lll-1mAXWcTmw/exec';
 
 // تابع محافظت از کاراکترهای HTML برای جلوگیری از XSS
 function escapeHtml(unsafe) {
