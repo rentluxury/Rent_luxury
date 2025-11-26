@@ -114,104 +114,76 @@ function sendExtendToWhatsApp(event) {
     window.open(url, "_blank");
 }
 
-// لینک Web App جدید Google Apps Script
-const API_URL = 'https://script.google.com/macros/s/AKfycbyc_3lFifUtEmlIVSeIzSTlZxqSYU7H51LC7CF1JvoY6_cTQPGc2w5UYHIedzOP23g7rg/exec';
+// ----- آدرس جدید وب‌اپ -----
+const API_URL = "https://script.google.com/macros/s/AKfycbyc_3lFifUtEmlIVSeIzSTlZxqSYU7H51LC7CF1JvoY6_cTQPGc2w5UYHIedzOP23g7rg/exec";
 
-// تابع محافظت از کاراکترهای HTML برای جلوگیری از XSS
-function escapeHtml(unsafe) {
-  return String(unsafe || '')
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;");
-}
+// ---------- ارسال نظر ----------
+document.getElementById("reviewForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-// ارسال فرم به Google Sheets
-document.getElementById('reviewForm').addEventListener('submit', async function(e){
-  e.preventDefault();
+    const name = document.getElementById("rv_name").value;
+    const phone = document.getElementById("rv_phone").value;
+    const rating = document.getElementById("rv_rating").value;
+    const review = document.getElementById("rv_review").value;
 
-  const name = document.getElementById('rv_name').value.trim();
-  const phone = document.getElementById('rv_phone').value.trim();
-  const rating = document.getElementById('rv_rating').value;
-  const review = document.getElementById('rv_review').value.trim();
+    const rv_msg = document.getElementById("rv_msg");
+    const rv_err = document.getElementById("rv_err");
 
-  const msgEl = document.getElementById('rv_msg');
-  const errEl = document.getElementById('rv_err');
-  msgEl.style.display = 'none';
-  errEl.style.display = 'none';
+    rv_msg.style.display = "none";
+    rv_err.style.display = "none";
 
-  if(!review) {
-    errEl.textContent = 'لطفاً نظر خود را بنویسید.';
-    errEl.style.display = 'block';
-    return;
-  }
+    try {
+        let res = await fetch(API_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name,
+                phone,
+                rating,
+                review
+            })
+        });
 
-  const formData = new FormData();
-  formData.append('name', name);
-  formData.append('phone', phone);
-  formData.append('rating', rating);
-  formData.append('comment', review); // دقت کن با نام ستون شیت مطابقت داشته باشد
+        rv_msg.style.display = "block";
+        document.getElementById("reviewForm").reset();
 
-  try {
-    const res = await fetch(API_URL, { method: 'POST', body: formData });
-    const data = await res.json();
-
-    if(data.result === 'success') {
-      msgEl.textContent = '✅ نظر شما ثبت شد و پس از تأیید نمایش داده خواهد شد.';
-      msgEl.style.display = 'block';
-      document.getElementById('reviewForm').reset();
-      loadComments(); // بروزرسانی نمایش نظرات
-    } else {
-      errEl.textContent = '❌ مشکلی پیش آمد، لطفاً دوباره تلاش کنید.';
-      errEl.style.display = 'block';
+    } catch (error) {
+        rv_err.style.display = "block";
+        rv_err.innerText = "❌ مشکلی پیش آمد. دوباره تلاش کنید.";
     }
-  } catch(err) {
-    console.error(err);
-    errEl.textContent = '❌ خطا در ارسال نظر!';
-    errEl.style.display = 'block';
-  }
 });
 
-// بارگذاری نظرات تایید شده
-async function loadComments(){
-  const container = document.getElementById('commentsContainer');
-  container.innerHTML = '<p style="text-align:center; color:#777; padding:20px 0;">در حال بارگذاری نظرات...</p>';
 
-  try {
-    const res = await fetch(API_URL);
-    const data = await res.json();
+// ---------- نمایش نظرات ----------
+async function loadComments() {
+    const container = document.getElementById("commentsContainer");
+    container.innerHTML = "<p style='text-align:center;color:#777;'>درحال بارگذاری...</p>";
 
-    if(!data || !Array.isArray(data) || data.length === 0){
-      container.innerHTML = '<p style="text-align:center; color:#777; padding:20px 0;">فعلاً نظری تأیید نشده است.</p>';
-      return;
+    try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+
+        if (!data.comments || data.comments.length === 0) {
+            container.innerHTML = "<p style='text-align:center;color:#777;'>فعلاً نظری تأیید نشده.</p>";
+            return;
+        }
+
+        container.innerHTML = "";
+
+        data.comments.forEach((c) => {
+            container.innerHTML += `
+                <div class="comment-item">
+                    <h4>${c.name || "مهمان"} ⭐${c.rating}</h4>
+                    <p>${c.comment}</p>
+                    <div class="comment-meta">${c.timestamp}</div>
+                </div>
+            `;
+        });
+
+    } catch (err) {
+        container.innerHTML = "<p style='color:red;text-align:center;'>خطا در بارگذاری نظرات.</p>";
     }
-
-    container.innerHTML = '';
-    // مرتب‌سازی بر اساس timestamp جدیدترین اول
-    const items = data.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-    items.forEach(c => {
-      if(c.approved !== 'true') return; // فقط تایید شده‌ها
-      const name = escapeHtml(c.name || 'مهمان');
-      const text = escapeHtml(c.comment || '');
-      const stamp = escapeHtml(String(c.timestamp || ''));
-      const rating = escapeHtml(String(c.rating || ''));
-
-      const html = `
-        <div class="comment-item">
-          <h4>${name} <span style="font-size:13px; color:#d4af37; margin-right:8px;">${rating}</span></h4>
-          <p>${text}</p>
-          <div class="comment-meta">${stamp}</div>
-        </div>
-      `;
-      container.insertAdjacentHTML('beforeend', html);
-    });
-
-  } catch(err){
-    console.error(err);
-    container.innerHTML = '<p style="text-align:center; color:#c00; padding:20px 0;">خطا در بارگذاری نظرات — دوباره تلاش کنید.</p>';
-  }
 }
 
-// بارگذاری اولیه نظرات پس از لود صفحه
-document.addEventListener('DOMContentLoaded', loadComments);
+document.addEventListener("DOMContentLoaded", loadComments);
