@@ -115,7 +115,7 @@ function sendExtendToWhatsApp(event) {
 }
 
 // ----- آدرس جدید وب‌اپ -----
-const API_URL ="https://script.google.com/macros/s/AKfycbyc_3lFifUtEmlIVSeIzSTlZxqSYU7H51LC7CF1JvoY6_cTQPGc2w5UYHIedzOP23g7rg/exec";
+const API_URL ="https://script.google.com/macros/s/AKfycbzg-dl9eMxHmUwi9zj4dVBorMuudE3CTTGtqIbZFzx2bORSt2jtBV6Fuy2y_UODrtXmAg/exec";
 // ---------- ارسال نظر ----------
 document.getElementById("reviewForm").addEventListener("submit", async function (e) {
     e.preventDefault();
