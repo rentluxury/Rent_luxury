@@ -299,5 +299,108 @@
 
 <script src="script.js"></script>
 
+ <!-- HTML: حباب و منو -->
+<div class="floating-bubble">
+  <div class="bubble-icon">💬</div>
+  <div class="bubble-menu">
+    <a href="sms:+989124253122"><img src="https://img.icons8.com/ios-filled/24/000000/sms.png"/> SMS</a>
+    <a href="https://t.me/rentautoluxury" target="_blank"><img src="https://img.icons8.com/ios-filled/24/000000/telegram-app.png"/> تلگرام</a>
+    <a href="https://wa.me/989124253122" target="_blank"><img src="https://img.icons8.com/ios-filled/24/000000/whatsapp.png"/> واتساپ</a>
+    <a href="https://instagram.com/Rentluxury.pira" target="_blank"><img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png"/> اینستاگرام</a>
+  </div>
+</div>
+
+<!-- CSS: سبک و انیمیشن -->
+<style>
+.floating-bubble {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.bubble-icon {
+  width: 60px;
+  height: 60px;
+  background: #28a745;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.bubble-icon:hover {
+  transform: scale(1.1);
+}
+
+.bubble-menu {
+  display: none;
+  flex-direction: column;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.bubble-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.bubble-menu a:hover {
+  background: #f1f1f1;
+}
+
+.bubble-menu a:last-child {
+  border-bottom: none;
+}
+
+/* انیمیشن حرکت حباب */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.bubble-icon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<!-- JS: باز و بسته کردن منو -->
+<script>
+const bubbleIcon = document.querySelector('.bubble-icon');
+const bubbleMenu = document.querySelector('.bubble-menu');
+
+bubbleIcon.addEventListener('click', () => {
+  if(bubbleMenu.style.display === 'flex') {
+    bubbleMenu.style.display = 'none';
+  } else {
+    bubbleMenu.style.display = 'flex';
+  }
+});
+</script>
+    
 </body>
 </html>
