@@ -115,7 +115,8 @@ function sendExtendToWhatsApp(event) {
 }
 
 // ----- آدرس جدید وب‌اپ -----
-const API_URL ="https://script.google.com/macros/s/AKfycbzg-dl9eMxHmUwi9zj4dVBorMuudE3CTTGtqIbZFzx2bORSt2jtBV6Fuy2y_UODrtXmAg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzg-dl9eMxHmUwi9zj4dVBorMuudE3CTTGtqIbZFzx2bORSt2jtBV6Fuy2y_UODrtXmAg/exec";
+
 // ---------- ارسال نظر ----------
 document.getElementById("reviewForm").addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -134,8 +135,7 @@ document.getElementById("reviewForm").addEventListener("submit", async function 
     try {
         let res = await fetch(API_URL, {
             method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json;charset=utf-8" },
             body: JSON.stringify({
                 name,
                 phone,
@@ -152,6 +152,7 @@ document.getElementById("reviewForm").addEventListener("submit", async function 
         rv_err.innerText = "❌ مشکلی پیش آمد. دوباره تلاش کنید.";
     }
 });
+
 
 
 // ---------- نمایش نظرات ----------
