@@ -176,7 +176,7 @@ async function loadComments() {
             container.innerHTML += `
                 <div class="comment-item">
                     <h4>${c.name || "مهمان"} ⭐${c.rating}</h4>
-                    <p>${c.comment}</p>
+                    <p>${c.review}</p>
                     <div class="comment-meta">${c.timestamp}</div>
                 </div>
             `;
