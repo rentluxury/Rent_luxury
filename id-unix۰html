@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+
+<title>اجاره آی دی یونیکس (ID UNYX) در تهران | رنت لاکچری</title>
+
+<meta name="description" content="اجاره آی دی یونیکس (ID UNYX) در تهران از رنت لاکچری. خودرویی تمام الکتریکی، مدرن و لوکس مناسب استفاده شهری، سفرهای خانوادگی و تجربه رانندگی متفاوت. رزرو آسان با تقویم شمسی.">
+<meta name="keywords" content="اجاره آی دی یونیکس, اجاره ID UNYX, اجاره ID Unix, اجاره خودرو برقی تهران, اجاره ماشین لوکس, رنت لاکچری">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{font-family:Tahoma,sans-serif;background:#f4f4f4;margin:0;text-align:center}
+header{background:#000;color:#fff;padding:25px}
+section{padding:35px}
+.car-img{max-width:520px;width:100%;height:350px;object-fit:cover;border-radius:12px;margin:25px auto;display:block}
+.intro{max-width:900px;margin:auto;text-align:justify;font-size:18px;line-height:2}
+.specs{max-width:800px;margin:30px auto;text-align:right;line-height:2;font-size:17px}
+.price-box{border:2px solid #d4af37;border-radius:12px;background:#000;color:#fff;padding:25px;max-width:420px;margin:35px auto;text-align:center}
+.price-box h3{color:#d4af37;font-size:24px}
+.note{color:#ccc;font-size:15px}
+.reserve-input{width:100%;padding:14px;margin:10px 0;border:1px solid #d4af37;border-radius:6px;background:#111;color:#fff;font-size:16px;box-sizing:border-box}
+.back-btn{display:inline-block;margin:30px;padding:14px 30px;background:#d4af37;color:#000;font-weight:bold;border-radius:8px;text-decoration:none}
+.back-btn:hover{background:#000;color:#d4af37}
+</style>
+
+<!-- تقویم شمسی -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<h1>اجاره آی دی یونیکس (ID UNYX) در تهران | رنت لاکچری</h1>
+</header>
+
+<section>
+<img src="images/id-unix-luxury-main.jpg"
+     alt="اجاره آی دی یونیکس ID UNYX در تهران - رنت لاکچری"
+     class="car-img">
+
+<div class="intro">
+
+<!-- توضیحات خودرو -->
+<h2>آی دی یونیکس (ID UNYX) | خودروی الکتریکی مدرن و لوکس</h2>
+<p>
+آی دی یونیکس (ID UNYX) یکی از خودروهای <strong>تمام الکتریکی، مدرن و آینده‌نگر</strong> است
+که با طراحی خاص، کابین دیجیتال و سواری نرم،
+تجربه‌ای متفاوت از رانندگی را ارائه می‌دهد.
+این خودرو انتخابی عالی برای <strong>استفاده شهری، سفرهای خانوادگی و رانندگی لوکس</strong> محسوب می‌شود.
+بی‌صدایی، شتاب نرم و مصرف اقتصادی،
+آی دی یونیکس را به گزینه‌ای محبوب در میان خودروهای جدید اجاره‌ای تبدیل کرده است.
+</p>
+
+<!-- مزایای اجاره -->
+<h2>مزایای اجاره آی دی یونیکس | ID UNYX از رنت لاکچری</h2>
+<p>
+با اجاره آی دی یونیکس از رنت لاکچری، از مزایای زیر بهره‌مند می‌شوید:
+<br>• تحویل سریع و آسان خودرو در تهران  
+<br>• خودروی کاملاً سالم و آماده استفاده  
+<br>• مناسب رانندگی شهری و روزمره  
+<br>• پشتیبانی کامل در طول مدت اجاره  
+<br>• تجربه رانندگی مدرن و بی‌صدا  
+</p>
+
+<!-- قیمت -->
+<h2>قیمت اجاره آی دی یونیکس (ID UNYX)</h2>
+<p>
+قیمت اجاره آی دی یونیکس بسته به مدت اجاره و تاریخ انتخابی متفاوت است.
+در حال حاضر
+<strong>قیمت اجاره ID UNYX از ۹,۵۰۰,۰۰۰ تومان در روز</strong>
+شروع می‌شود.
+برای دریافت قیمت دقیق می‌توانید از فرم رزرو یا واتساپ اقدام کنید.
+</p>
+
+<!-- مشخصات فنی -->
+<h2>مشخصات فنی و امکانات آی دی یونیکس</h2>
+</div>
+
+<ul class="specs">
+<li>🔹 موتور تمام الکتریکی با شتاب نرم</li>
+<li>🔹 مصرف انرژی اقتصادی و بدون آلایندگی</li>
+<li>🔹 کابین دیجیتال با نمایشگرهای مدرن</li>
+<li>🔹 سواری بسیار نرم و بی‌صدا</li>
+<li>🔹 مناسب استفاده شهری و سفرهای کوتاه</li>
+<li>🔹 امکان اجاره روزانه، هفتگی و ماهانه</li>
+</ul>
+
+<!-- باکس قیمت -->
+<div class="price-box">
+<h3>💰 شروع قیمت: ۹,۵۰۰,۰۰۰ تومان در روز</h3>
+<p class="note">
+قیمت نهایی بر اساس مدت اجاره و تاریخ رزرو محاسبه می‌شود.
+</p>
+</div>
+
+</section>
+
+<!-- فرم رزرو -->
+<section style="max-width:650px;margin:40px auto;background:#000;color:#fff;padding:40px;border:2px solid #d4af37;border-radius:14px">
+<h2 style="color:#d4af37">🔑 فرم رزرو آی دی یونیکس (ID UNYX)</h2>
+<p style="color:#ccc">برای اجاره آی دی یونیکس اطلاعات خود را وارد کنید</p>
+
+<form onsubmit="sendRequest(); return false;">
+<input type="text" id="name" placeholder="نام و نام خانوادگی" required class="reserve-input">
+<input type="text" id="phone" placeholder="شماره تماس" required class="reserve-input">
+<input type="hidden" id="car" value="آی دی یونیکس (ID UNYX)">
+
+<label>تاریخ شروع اجاره</label>
+<input type="text" id="start" class="pdate reserve-input" required>
+
+<label>تاریخ پایان اجاره</label>
+<input type="text" id="end" class="pdate reserve-input" required>
+
+<button type="submit"
+style="width:100%;padding:18px;background:#d4af37;border:none;font-size:20px;font-weight:bold;border-radius:8px;cursor:pointer">
+🚗 ارسال درخواست از واتساپ
+</button>
+</form>
+</section>
+
+<a href="index.html" class="back-btn">⬅ بازگشت به صفحه اصلی</a>
+
+<script>
+$(document).ready(function(){
+$('.pdate').persianDatepicker({
+format:'YYYY/MM/DD',
+autoClose:true,
+initialValue:false
+});
+});
+
+function sendRequest(){
+let msg=`سلام، من ${name.value} هستم.
+شماره تماس: ${phone.value}
+می‌خواهم آی دی یونیکس (ID UNYX) را
+از ${start.value} تا ${end.value} رزرو کنم.`;
+window.open("https://wa.me/989124253122?text="+encodeURIComponent(msg));
+}
+</script>
+
+</body>
+</html>
