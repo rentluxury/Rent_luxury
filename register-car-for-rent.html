@@ -1,22 +1,113 @@
-<section class="box">
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h2>دعوت به همکاری با رنت لاکچری</h2>
+<title>دعوت به همکاری | ثبت خودرو برای اجاره در رنت لاکچری</title>
+
+<meta name="description" content="ثبت خودرو برای اجاره، همکاری با رنت لاکچری، اجاره دادن خودروهای شخصی، ثبت ماشین برای رنت و همکاری با مجموعه اجاره خودرو">
+
+<style>
+body{
+direction:rtl;
+font-family:tahoma;
+line-height:2;
+margin:0;
+padding:0;
+background:#fff;
+color:#111;
+}
+header,section,footer{
+max-width:1000px;
+margin:auto;
+padding:25px;
+}
+.hero{
+background:#f5f5f5;
+border-radius:10px;
+}
+.box{
+background:#fafafa;
+border-radius:10px;
+padding:20px;
+margin-top:20px;
+}
+a{
+color:#000;
+font-weight:bold;
+text-decoration:none;
+}
+a:hover{
+text-decoration:underline;
+}
+input,textarea{
+font-family:tahoma;
+font-size:15px;
+}
+footer{
+text-align:center;
+font-size:14px;
+color:#666;
+}
+.cta{
+background:#111;
+color:#fff;
+padding:30px;
+border-radius:12px;
+text-align:center;
+margin-top:40px;
+}
+
+.cta a,
+.back{
+display:inline-block;
+background:#d4af37;
+color:#000;
+padding:12px 22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+
+.back{
+margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="/">صفحه اصلی</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<h1>دعوت به همکاری | ثبت خودرو برای اجاره</h1>
 
 <p>
-اگر مالک خودرو هستید
-و تمایل دارید خودروی شما در مجموعه رنت لاکچری اجاره داده شود،
-می‌توانید اطلاعات خودرو و راه ارتباطی خود را
-از طریق فرم زیر برای ما ارسال کنید.
+اگر مالک خودرو هستید و تمایل دارید
+خودروی شما در مجموعه رنت لاکچری اجاره داده شود،
+می‌توانید درخواست همکاری خود را برای ما ارسال کنید.
 </p>
 
 <p>
-امکان همکاری برای انواع خودروهای
-اقتصادی،
+امکان همکاری برای انواع خودروهای اقتصادی،
 سدان،
 شاسی‌بلند،
 لوکس،
 تشریفاتی و مدل‌های جدید فراهم است.
 </p>
+
+</section>
+
+<section class="box">
+
+<h2>فرم درخواست همکاری</h2>
 
 <form onsubmit="sendToWhatsApp(); return false;">
 
@@ -70,6 +161,17 @@ cursor:pointer;
 
 </section>
 
+<div class="cta">
+  <div>آماده همکاری با رنت لاکچری هستید؟</div>
+  <a href="index.html#cars">مشاهده خودروهای مجموعه</a>
+</div>
+
+<a class="back" href="index.html">⬅ بازگشت به صفحه اصلی</a>
+
+<footer>
+<p>© رنت لاکچری | اجاره خودرو در ایران</p>
+</footer>
+
 <script>
 function sendToWhatsApp(){
 
@@ -91,3 +193,6 @@ window.open("https://wa.me/989124253122?text=" + text, "_blank");
 
 }
 </script>
+
+</body>
+</html>
