@@ -1,0 +1,93 @@
+<section class="box">
+
+<h2>دعوت به همکاری با رنت لاکچری</h2>
+
+<p>
+اگر مالک خودرو هستید
+و تمایل دارید خودروی شما در مجموعه رنت لاکچری اجاره داده شود،
+می‌توانید اطلاعات خودرو و راه ارتباطی خود را
+از طریق فرم زیر برای ما ارسال کنید.
+</p>
+
+<p>
+امکان همکاری برای انواع خودروهای
+اقتصادی،
+سدان،
+شاسی‌بلند،
+لوکس،
+تشریفاتی و مدل‌های جدید فراهم است.
+</p>
+
+<form onsubmit="sendToWhatsApp(); return false;">
+
+<div style="margin-bottom:15px;">
+<label>نام و نام خانوادگی</label><br>
+<input type="text" id="name" required
+style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px;">
+</div>
+
+<div style="margin-bottom:15px;">
+<label>شماره تماس</label><br>
+<input type="tel" id="phone" required
+style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px;">
+</div>
+
+<div style="margin-bottom:15px;">
+<label>مدل خودرو</label><br>
+<input type="text" id="car"
+placeholder="مثلاً BMW X4"
+required
+style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px;">
+</div>
+
+<div style="margin-bottom:15px;">
+<label>سال خودرو</label><br>
+<input type="text" id="year"
+placeholder="مثلاً 2022"
+style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px;">
+</div>
+
+<div style="margin-bottom:15px;">
+<label>توضیحات</label><br>
+<textarea id="message" rows="5"
+placeholder="توضیحات درباره خودرو..."
+style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px;"></textarea>
+</div>
+
+<button type="submit" style="
+background:#000;
+color:#fff;
+padding:12px 24px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+">
+ارسال درخواست همکاری
+</button>
+
+</form>
+
+</section>
+
+<script>
+function sendToWhatsApp(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let car = document.getElementById("car").value;
+let year = document.getElementById("year").value;
+let message = document.getElementById("message").value;
+
+let text =
+"درخواست همکاری جدید:%0A%0A" +
+"نام: " + name + "%0A" +
+"شماره تماس: " + phone + "%0A" +
+"مدل خودرو: " + car + "%0A" +
+"سال خودرو: " + year + "%0A" +
+"توضیحات: " + message;
+
+window.open("https://wa.me/989124253122?text=" + text, "_blank");
+
+}
+</script>
